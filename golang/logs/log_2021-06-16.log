@@ -1,0 +1,679 @@
+2021/06/16 09:39:47.649 [I] [main.go:27]  Log Init Successfully!
+2021/06/16 09:39:47.990 [I] [main.go:28]  Mysql Init Successfully!
+2021/06/16 09:39:47.990 [I] [main.go:30]  Timed Task Init Successfully!
+2021/06/16 09:39:48.172 [I] [asm_amd64.s:1373]  http server Running on http://:8062
+2021/06/16 09:40:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 09:40:01.250 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 09:40:01.250 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2160 ，lpPriceNew= 1 ，totalAmountNew= 2160 ，apyNew= 389333.33
+2021/06/16 09:55:14.558 [I] [main.go:27]  Log Init Successfully!
+2021/06/16 09:55:14.796 [I] [main.go:28]  Mysql Init Successfully!
+2021/06/16 09:55:14.796 [I] [main.go:30]  Timed Task Init Successfully!
+2021/06/16 09:55:14.958 [I] [asm_amd64.s:1373]  http server Running on http://:8062
+2021/06/16 09:55:27.126 [I] [value.go:460]  HasAdvertisement请求参数：userAddr= 0xbff70df82d50E28305c87806c421f1dfbe85d716 ，chainType= BSC
+2021/06/16 09:55:29.905 [I] [value.go:460]  HasAdvertisement请求参数：userAddr= 0xbff70df82d50E28305c87806c421f1dfbe85d716 ，chainType= BSC
+2021/06/16 09:55:46.216 [I] [value.go:460]  HasAdvertisement请求参数：userAddr= 0xbff70df82d50E28305c87806c421f1dfbe85d716 ，chainType= BSC
+2021/06/16 09:55:51.127 [I] [value.go:460]  HasAdvertisement请求参数：userAddr= 0xbff70df82d50E28305c87806c421f1dfbe85d716 ，chainType= BSC
+2021/06/16 09:56:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 09:56:01.365 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 09:56:01.365 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 09:57:00.006 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 09:57:00.538 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 09:57:00.538 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 09:58:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 09:58:00.546 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 09:58:00.546 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 09:59:00.002 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 09:59:00.544 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 09:59:00.544 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:00:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:00:00.534 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:00:00.534 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:01:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:01:00.540 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:01:00.540 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:02:00.004 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:02:00.538 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:02:00.538 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:03:00.003 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:03:00.556 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:03:00.556 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:03:50.307 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:03:50.319 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:03:50.368 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:04:00.002 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:04:00.550 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:04:00.550 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:04:39.926 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:04:39.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:04:39.946 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:05:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:05:00.549 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:05:00.549 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:05:10.436 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:05:10.436 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:05:10.436 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:05:12.736 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:05:12.740 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:05:12.741 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:05:37.711 [I] [value.go:460]  HasAdvertisement请求参数：userAddr= 0xbff70df82d50E28305c87806c421f1dfbe85d716 ，chainType= BSC
+2021/06/16 10:06:00.009 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:06:00.565 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:06:00.565 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:06:05.684 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:06:05.685 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:06:05.685 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:06:35.748 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:06:35.750 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:06:35.750 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:07:00.004 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:07:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:07:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:07:05.813 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:07:05.824 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:07:05.826 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:07:35.909 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:07:35.919 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:07:35.921 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:08:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:08:00.536 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:08:00.536 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:08:06.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:08:06.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:08:06.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:08:36.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:08:36.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:08:36.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:09:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:09:00.537 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:09:00.537 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:09:06.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:09:06.922 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:09:06.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:09:36.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:09:36.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:09:36.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:10:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:10:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:10:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:10:06.920 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:10:06.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:10:06.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:10:36.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:10:36.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:10:36.930 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:11:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:11:00.537 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:11:00.537 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:11:06.915 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:11:06.915 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:11:06.918 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:11:36.918 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:11:36.919 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:11:36.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:12:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:12:00.586 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:12:00.586 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:12:06.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:12:06.938 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:12:06.938 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:12:36.917 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:12:36.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:12:36.921 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:13:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:13:00.539 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:13:00.539 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:13:06.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:13:06.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:13:06.930 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:13:36.936 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:13:36.938 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:13:36.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:14:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:14:00.536 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:14:00.536 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:14:06.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:14:06.928 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:14:06.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:14:36.924 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:14:36.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:14:36.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:15:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:15:00.537 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:15:00.537 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:15:06.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:15:06.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:15:06.926 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:15:36.916 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:15:36.916 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:15:36.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:16:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:16:00.536 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:16:00.536 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:16:06.917 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:16:06.925 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:16:06.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:16:37.918 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:16:37.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:16:37.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:17:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:17:00.540 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:17:00.540 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:17:09.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:17:09.928 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:17:09.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:18:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:18:00.546 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:18:00.546 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:18:09.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:18:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:18:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:18:37.933 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:18:37.934 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:18:37.938 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:19:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:19:00.535 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:19:00.535 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:19:07.926 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:19:07.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:19:07.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:19:37.922 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:19:37.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:19:37.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:20:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:20:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:20:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:20:07.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:20:07.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:20:07.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:20:37.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:20:37.921 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:20:37.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:21:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:21:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:21:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:21:07.913 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:21:07.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:21:07.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:21:37.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:21:37.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:21:37.926 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:22:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:22:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:22:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:22:07.926 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:22:07.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:22:07.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:22:37.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:22:37.922 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:22:37.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:23:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:23:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:23:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:23:07.931 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:23:07.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:23:07.935 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:24:00.008 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:24:00.548 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:24:00.548 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:24:09.936 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:24:09.951 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:24:09.951 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:25:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:25:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:25:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:25:09.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:25:09.941 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:25:09.942 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:26:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:26:00.534 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:26:00.534 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:26:09.933 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:26:09.942 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:26:09.945 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:27:00.008 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:27:00.538 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:27:00.538 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:27:09.940 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:27:09.941 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:27:09.943 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:28:00.004 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:28:00.540 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:28:00.540 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:28:09.941 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:28:09.953 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:28:09.953 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:28:36.646 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:28:36.646 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:28:36.649 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:28:46.047 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:28:46.047 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:28:46.050 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:29:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:29:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:29:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:29:16.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:29:16.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:29:16.937 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:29:46.924 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:29:46.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:29:46.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:30:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:30:00.543 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:30:00.543 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:30:30.282 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:30:30.282 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:30:30.282 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:30:46.311 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:30:46.311 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:30:46.313 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:31:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:31:00.535 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:31:00.535 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:31:16.369 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:31:16.379 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:31:16.382 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:31:46.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:31:46.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:31:46.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:32:00.012 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:32:00.545 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:32:00.545 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:32:16.933 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:32:16.933 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:32:16.939 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:32:46.930 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:32:46.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:32:46.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:33:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:33:00.536 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:33:00.536 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:33:16.946 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:33:16.946 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:33:16.947 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:33:46.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:33:46.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:33:46.924 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:34:00.013 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:34:00.548 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:34:00.548 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:34:16.942 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:34:16.942 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:34:16.946 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:34:46.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:34:46.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:34:46.940 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:35:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:35:00.538 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:35:00.538 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:35:16.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:35:16.931 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:35:16.943 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:35:46.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:35:46.933 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:35:46.933 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:36:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:36:00.542 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:36:00.542 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:36:17.904 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:36:17.913 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:36:17.915 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:37:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:37:00.543 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:37:00.543 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:37:09.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:37:09.931 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:37:09.934 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:38:00.004 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:38:00.541 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:38:00.542 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:38:09.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:38:09.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:38:09.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:38:40.743 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:38:40.744 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:38:40.744 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:00.008 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:39:00.539 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:39:00.540 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:39:10.934 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:10.934 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:10.935 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:39:18.587 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:39:18.590 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:18.591 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:24.823 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:39:24.826 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:24.827 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:54.921 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:39:54.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:39:54.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:40:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:40:00.542 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:40:00.543 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:40:25.926 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:40:25.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:40:26.188 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:40:55.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:40:55.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:40:55.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:41:00.015 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:41:00.551 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:41:00.551 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:41:25.918 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:41:25.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:41:25.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:41:55.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:41:55.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:41:55.930 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:42:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:42:00.530 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:42:00.530 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:42:18.641 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:42:18.641 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:42:18.643 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:42:41.462 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:42:41.464 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:42:41.466 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:43:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:43:00.534 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:43:00.534 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:43:11.940 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:43:11.947 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:43:11.951 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:43:41.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:43:41.931 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:43:41.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:44:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:44:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:44:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:44:11.914 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:44:11.914 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:44:11.914 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:44:41.929 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:44:41.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:44:41.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:45:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:45:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:45:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:45:11.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:45:11.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:45:11.928 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:45:41.932 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:45:41.937 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:45:41.939 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:46:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:46:00.537 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:46:00.537 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:46:11.928 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:46:11.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:46:11.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:46:42.923 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:46:42.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:46:42.935 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:47:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:47:00.536 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:47:00.536 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:47:12.917 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:47:12.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:47:12.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:47:42.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:47:42.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:47:42.930 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:48:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:48:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:48:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:48:12.917 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:48:12.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:48:12.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:48:42.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:48:42.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:48:42.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:49:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:49:00.543 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:49:00.543 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:50:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:50:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:50:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:50:09.916 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:50:09.916 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:50:09.918 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:51:00.014 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:51:00.572 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:51:00.572 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:51:09.926 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:51:09.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:51:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:52:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:52:00.546 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:52:00.546 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:52:09.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:52:09.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:52:09.925 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:53:00.011 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:53:00.552 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:53:00.552 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:53:09.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:53:09.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:53:09.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:54:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:54:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:54:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:54:09.914 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:54:09.914 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:54:09.916 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:55:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:55:00.534 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:55:00.534 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:55:09.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:55:09.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:55:09.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:56:00.002 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:56:00.542 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:56:00.542 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:56:09.917 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:56:09.918 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:56:09.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:57:00.003 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:57:00.537 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:57:00.537 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:57:09.928 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:57:09.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:57:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:58:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:58:00.536 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:58:00.536 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:58:09.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:58:09.921 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:58:09.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:59:00.006 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 10:59:00.548 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 10:59:00.548 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 10:59:09.936 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 10:59:09.938 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 10:59:09.943 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:00:00.005 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:00:00.546 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:00:00.546 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:00:09.940 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:00:09.948 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:00:09.949 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:01:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:01:00.535 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:01:00.535 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:01:09.936 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:01:09.944 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:01:09.945 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:02:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:02:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:02:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:02:09.923 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:02:09.926 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:02:09.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:03:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:03:00.532 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:03:00.532 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:03:09.923 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:03:09.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:03:09.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:04:00.012 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:04:00.544 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:04:00.544 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:04:09.939 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:04:09.940 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:04:09.944 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:05:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:05:00.533 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:05:00.533 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:05:09.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:05:09.923 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:05:09.926 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:06:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:06:00.535 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:06:00.535 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:06:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:06:09.929 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:06:09.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:07:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:07:00.531 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:07:00.531 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:07:09.932 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:07:09.932 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:07:09.936 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:08:00.002 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:08:00.531 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:08:00.531 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:08:09.933 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:08:09.933 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:08:09.936 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:09:00.005 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:09:21.693 [E] [chainUtils.go:86]  miningInstance.YamPerBlock error:  Post "https://data-seed-prebsc-1-s1.binance.org:8545/": read tcp 192.168.1.132:58284->18.182.150.72:8545: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+2021/06/16 11:09:21.693 [E] [chainStatus.go:57]  mining.GetTokenPerBlock error:  Post "https://data-seed-prebsc-1-s1.binance.org:8545/": read tcp 192.168.1.132:58284->18.182.150.72:8545: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+2021/06/16 11:09:29.090 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:09:29.090 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:09:29.091 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:10:00.010 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:10:01.246 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:10:01.246 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:10:09.945 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:10:10.009 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:10:10.009 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:11:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:11:00.837 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:11:00.837 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:11:09.943 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:11:09.943 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:11:09.962 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:12:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:12:01.158 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:12:01.158 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:12:09.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:12:09.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:12:09.925 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:13:00.003 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:13:00.590 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:13:00.591 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:13:09.922 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:13:09.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:13:09.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:13:25.556 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:13:25.559 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:13:25.561 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:13:45.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:13:45.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:13:45.926 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:14:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:14:00.572 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:14:00.572 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:14:15.930 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:14:15.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:14:15.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:14:45.929 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:14:45.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:14:45.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:15:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:15:00.579 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:15:00.579 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:15:15.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:15:15.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:15:15.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:15:45.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:15:45.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:15:45.925 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:16:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:16:00.573 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:16:00.573 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:16:15.930 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:16:15.934 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:16:15.934 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:16:45.924 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:16:45.927 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:16:45.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:17:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:17:00.815 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:17:00.815 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:17:15.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:17:15.920 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:17:15.920 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:17:45.936 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:17:45.939 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:17:45.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:18:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:18:00.814 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:18:00.814 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:18:15.923 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:18:15.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:18:15.928 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:18:45.934 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:18:45.936 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:18:45.940 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:19:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:19:01.711 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:19:01.711 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:20:00.001 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:20:00.576 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:20:00.576 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:20:06.930 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:20:06.930 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:20:06.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:21:00.012 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:21:00.601 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:21:00.601 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:21:07.921 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:21:07.922 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:21:07.924 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:22:00.014 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:22:00.583 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:22:00.583 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:22:08.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:22:08.929 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:22:08.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:23:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:23:00.571 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:23:00.571 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:23:09.919 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:23:09.921 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:23:09.923 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:24:00.006 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:24:00.577 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:24:00.577 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:24:09.929 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:24:09.933 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:24:09.935 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:25:00.000 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:25:00.568 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:25:00.568 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:25:09.927 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:25:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:25:09.929 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:26:00.015 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:26:01.233 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:26:01.233 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:26:09.938 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:26:09.941 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:26:09.943 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:27:00.008 [I] [chainStatus.go:57]  jamPrice:  0.2
+2021/06/16 11:27:00.583 [I] [chainStatus.go:57]  lpId= 0 ，的价格(USDT):  1
+2021/06/16 11:27:00.583 [I] [chainStatus.go:57]  lpId= 0 的更新信息：totalLiquidityNew= 2000 ，lpPriceNew= 1 ，totalAmountNew= 2000 ，apyNew= 420480
+2021/06/16 11:27:09.931 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
+2021/06/16 11:27:09.931 [I] [LiquidityController.go:46]  liq:  {7 0  0x91756aa35eD745C4CE58C906a66005b19509F834 0 2000 1 2000 420480 BSC 0}
+2021/06/16 11:27:09.933 [I] [LiquidityController.go:46]  liq:  {0 0   0      0}
