@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HOME</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="did" name="description">
+		<meta content="did" name="keywords">
+		<link href="img/logo.png" rel="icon">
+		<link href="img/logo.png" rel="apple-touch-icon">
+		<link rel="stylesheet" type="text/css" href="css/aos.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<!--  app容器 -->
+		<div id="app" v-cloak>
+		<header id="header" class="fixed-top">
+			<div class="container d-flex flex-jsb align-items-center userheaders" >
+				<h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="img/logo.png" alt=""
+							class="img-fluid"></h1>
+				<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''">
+					<ul>
+						<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/logo.png"></li>
+						<li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+						<li><a class="nav-link scrollto" href="liquid.html">Liquidity</a></li>
+						<!--  <i class="bi bi-chevron-down"></i> -->
+						<li class="dropdown" v-if="!walletaddress"><a href="#"><span class="walletdrop">Collect Wallet</span></a>
+							<ul class="languageList">
+								<li class="linkwallet"><a href="#" lang="cn" @click="pcLink">
+										<p class="coinname">B</p> BSC
+									</a></li>
+								<li><a href="#" lang="cn">
+										<p class="coinname">H</p> HECO(on the way)
+									</a></li>
+								<li><a href="#" lang="cn">
+										<p class="coinname">P</p> Plokadot(on the way)
+									</a></li>
+							</ul>
+						</li>
+						<li v-if="walletaddress" class="walletbox"><span class="walletaddress">{{walletaddress}}</span></li>
+					</ul>
+					<i class="bi bi-list mobile-nav-toggle" @click="toggleMenu"></i>
+				</nav>
+			</div>
+		</header>
+		<div class="pluscont">
+			<!-- create -->
+			<section id="hero" class="d-flex align-items-center position-relative" data-aos="fade-up"
+				data-aos-delay="100">
+				<div class="container">
+					<div class="hidden-sm hidden-lg createlabel mb10">CREATE</div>
+					<div class="createbox bg-box">
+						<div class="clearfix">
+							<div class="col-lg-6 col-sm-12 col-xs-12">
+								<div class="hidden-xs createlabel hidden-md">CREATE</div>
+								<div class="innerlabel mt10 fwb">Create</div>
+								<div class="innerlabel mt2"><span class="fwb">Your</span><span>
+										decentralized</span><span class="fwb"> Advertisement</span></div>
+								<div class="createtips">
+									<div class="d-flex align-items-center f14 color333">
+										<span>Create your decentralized Ads to get JAM airdrop tokens</span>
+										<img src="img/ques.png" class="ml10">
+									</div>
+									<div class="d-flex align-items-center f12 color-blue mt6">
+										<span>Share with your friends</span>
+										<img src="img/copy.png" class="ml10" @click="copyText(shareUrl,$event)">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-sm-12 col-xs-12">
+								<div class="rightone fwb">JAM Price:<span
+										class="color-orange">${{advertisePrice}}</span></div>
+								<div class="rightwo fwb"><span>JAM:</span>{{JAMbanlance}}</div>
+								<div class="d-flex flex-jsb mt10 align-items-center">
+									<button class="createBtn bg-theme color-white fwb"
+										@click="advOprate">{{advertiseState==0?'CREATE':(advertiseState==1?'CREATING':(advertiseState==2?'UNLOCK':'REMOVE'))}}</button>
+									<button class="createBtn color-white fwb  uploadbtn"
+										v-if="advertiseState!==2" :class="advertiseState==1?'bg-theme':'sgray'" @click="uploadShow()">UPLOAD</button>
+									<img :src="advertisePic" v-if="advertiseState==2" class="advertisePic">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- record -->
+			<section id="passverti" class="d-flex align-items-center position-relative" data-aos="fade-up"
+				data-aos-delay="200">
+				<div class="container" data-aos="fade-up">
+					<div class="hidden-sm hidden-lg createlabel mb10">RECORD</div>
+					<div class="createbox bg-box">
+						<div class="clearfix">
+							<div class="recordbox">
+								<div class="hidden-xs createlabel hidden-md mb20">RECORD</div>
+								<div class="nodata" v-if="recordList.length<=0">
+									<img src="img/nodata.png" class="nodataimg">
+									<p class="notxt">暂无记录</p>
+								</div>
+								<div class="recordCont" v-if="recordList.length>0">
+									<div v-for="(ritem,rindex) in recordList" :key="rindex" class="recorditem">
+										<img :src="ritem.imgUrl" class="adpic">
+										<div class="f16 advaddress">{{ritem.userAddr}}</div>
+									</div>
+									<div class="por dline" v-if="recordList.length>=2"></div>
+								</div>
+								<div class="pages d-flex flex-jcc" v-if="recordList.length>0">
+									<p class="one pageitem" i18n="pageone" @click="firstPage">第一页</p>
+									<p class="add pageitem" i18n="pagelast" @click="lastPage">上一页</p>
+									<p class="reduce pageitem" i18n="pagenext" @click="nextPage">下一页</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer id="footer">
+				<div class="container">
+					<div class="footerbox">
+						<div class="footitem">
+							<img src="img/h1.png" class="footimg">
+							<span class="hidden-xs">Telegram</span>
+						</div>
+						<div class="footitem">
+							<img src="img/h2.png" class="footimg">
+							<span class="hidden-xs">Medium</span>
+						</div>
+						<div class="footitem">
+							<img src="img/h3.png" class="footimg">
+							<span class="hidden-xs">Github</span>
+						</div>
+						<a class="footitem" href="wiki.html">
+							<img src="img/h4.png" class="footimg">
+							<span class="hidden-xs">Wiki</span>
+						</a>
+					</div>
+				</div>
+			</footer>
+			<!-- 链接钱包的弹窗 -->
+			<div class="linkBox hidden">
+				<div class="nopowerbox pt15">
+					<p class="tips fwb">Collect a Wallet</p>
+					<div class="d-flex align-items-center align-items-center metamaskbox">
+						<input type="text" placeholder="Metamask" disabled="disabled" class="metamask flex1"> 
+						<img src="img/w.png">
+					</div>
+				</div>
+			</div>
+			<!-- 已经有广告删除弹窗 -->
+			<div class="deleteBox hidden">
+				<div class="nopowerbox pt15">
+					<p class="tips">Remove advertisement？</p>
+					<button class="confirmbtn cancelAdv  btnmargin bg-theme">COMFIRM</button>
+				</div>
+			</div>
+			<!-- 创建广告先授权后上传文件 -->
+			<div class="createBox hidden">
+				<div class="nopowerbox pt15">
+					<p class="tips">Stake $JAM</p>
+					<p class="tips">to create an advertisement</p>
+					<div class="approvalbox">
+						<div class="d-flex flex-jsb align-items-center">
+							<span class="color-gray f14">JAM:</span>
+							<span class="fwb color-red f16">-10</span>
+						</div>
+						<div class="d-flex flex-jsb align-items-center mt6">
+							<span class="color-gray f14">JAM:</span>
+							<span class="fwb color333 f16">{{JAMbanlance}}</span>
+						</div>
+					</div>
+					<div class="d-flex flex-jcc confirmbox">
+						<button class="confirmbtn  sureApproval approval" :class="approvalState?'sgray':'bg-theme'" @click="approveJam">APPROVAL</button>
+						<button class="confirmbtn sureApproval confirmit ml15 bg-theme">COMFIRM</button>
+					</div>
+				</div>
+			</div>
+			<!-- 上传文件弹窗 -->
+			<div class="uploadBox hidden">
+				<div class=" pt15 upcont nopowerbox">
+					<div class="addimgbox upfilebox">
+						<div class="uploadbox position-relative">
+							<input type="file" class="uploadcode imgFiles" name="" id="" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" multiple="">
+							<img class="uploadCodePic uploadDown" src="img/up.png">
+							<span class="f12 color-gray">Drap & Drop your files here</span>
+						</div>
+					</div>
+					<div class="showcont">
+						<div class="showimgbox">
+							<img src="" alt="" class="filepic">
+							<img src="img/dele.png" class="delepic">
+						</div>
+						<div class="imgprogress"></div>
+					</div>
+					<button class="confirmbtn uploadSure btnmargin bg-theme">COMFIRM</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/aos.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/qs.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/http.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/query.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/contracts/web3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/address.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/mortgage_abi.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/token_abi.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var web3Provider;
+			var web3;
+			var app = new Vue({
+				el: '#app',
+				data: {
+					toggleState:false,
+					walletaddress:'',
+					originImage:'',
+					shareUrl: '',
+					// approvalState
+					approvalState:'',//授权状态
+					advertiseState:0, //0 没有广告  1已付款  2 已存在广告  3已移除广告但未移除质押
+					advertisePic: '', //已存在的广告pic
+					advertisePrice: 0.00, //广告价格
+					JAMbanlance: 0.00, //JAM余额
+					// 记录
+					page: 1,
+					allPage: '',
+					pageSize: 8,
+					chainType:'BSC',
+					finish: false,
+					recordList: [] //交易记录
+				},
+				async mounted() {
+					this.shareUrl = window.location.href
+					//手机端连接钱包 监听
+					// if(this.isMobile()){
+					this.linkWallet();
+					this.listenEthereum();
+					// }
+					this.getData()
+					this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
+				},
+				methods: {
+					toggleMenu(){
+						this.toggleState = !this.toggleState
+					},
+					isMobile() {
+						let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+						return flag;
+					},
+					uploadShow(){
+						if(this.advertiseState!==1)return
+						this.showUpload()
+					},
+					async linkWallet() {
+						if (ethereum) {
+							web3Provider = ethereum;
+							// 需要请求用户授权
+							try {
+								ethereum.enable();
+							} catch (error) {
+								parent.layer.msg("用户取消授权");
+								return;
+							}
+						} else if (web3) {
+							// MetaMask Legacy dapp browsers...
+							web3Provider = web3.currentProvider;
+							console.log("web3.currentProvider:");
+							console.log(web3.currentProvider);
+						} else {
+							web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+							console.log("https://http-testnet.hecochain.com");
+						}
+						web3 = new Web3(web3Provider);
+						web3.eth.net.getId((err, netId) => {
+							console.log("netId: ", netId);
+						});
+						await this.getDefaultAccount();
+						await this.getAdvertiseState() // 0 没有广告  1已付款  2 已存在广告
+						mortgageInstance = await new web3.eth.Contract(mortgageAbi, mortgageAddr);
+						jamInstance = await new web3.eth.Contract(tokenAbi, jamAddr);
+						await this.getJamBalance()	// 获取jam余额
+						await this.isApprove()
+					},
+					listenEthereum() {
+						ethereum.on('accountsChanged', function (accounts) {
+						    console.log(accounts[0])
+							defaultAccount = accounts[0];
+							window.location.reload();
+						})
+						ethereum.on('networkChanged', function (netId) {
+						    console.log("netId: ", netId);//一旦切换网络这里就会执行
+							window.location.reload();
+						})
+					},
+					async getDefaultAccount() {
+						let that = this
+						await web3.eth.getAccounts(function (err, accounts) {
+							if (err) {
+								parent.layer.msg(err);
+								return;
+							}
+							if (accounts.length == 0) {
+								return;
+							}
+							defaultAccount = accounts[0];
+							that.walletaddress = that.getUserAddr(defaultAccount)
+							localStorage.setItem('JamAddress',accounts[0])
+							console.log("defaultAccount: ", defaultAccount);
+						})
+					},
+					getUserAddr(addr) {
+						return addr.substring(0, 8) + "..." + addr.substring(addr.length - 8, addr.length);
+					},
+					// 0 没有广告  1已付款  2 已存在广告  3已移除广告但未移除质押
+					async getAdvertiseState() {
+						let that = this
+						$.ajax({
+						    type: "GET",
+						    url: url + "/v1/hasAdvertisement?userAddr=" + defaultAccount+"&chainType="+chainType,
+						    dataType: "json",
+						    success: async function (data) {
+						        if (data.code == "00000") {
+						            console.log("data: ", data)
+									if (data.data.has) {
+										that.advertiseState = 2;
+										var info = data.data.UserAdvertisement;
+										that.advertisePic = data.data.UserAdvertisement.imgUrl
+										console.log("info: ", info)
+									} else {
+										if (data.data.isDelete == 1) {
+											that.advertiseState = 3;
+										} else {
+											// 是否已质押
+											var userMap = await mortgageInstance.methods.userMap(defaultAccount).call()
+											let amount = userMap["amount"];
+											amount = amount / base18
+											console.log("amount: ", amount)
+											if (amount >= 10) { // 已质押代币
+												that.advertiseState = 1;
+											} else {
+												that.advertiseState = 0;
+											}
+										}
+									}
+									console.log("that.advertiseState: ", that.advertiseState)
+						        } else {
+						            console.log("出现错误: ", data.msg);
+						        }
+						    },
+						    error: function (jqXHR) {
+						        console.log(jqXHR)
+						    }
+						});
+					},
+					// 获取总锁仓和jam价格
+					getTvlAndJamPrice() {
+						var that = this;
+						$.ajax({
+						    type: "GET",
+						    url: url + "/v1/getTotalTvlAndJamPrice?chainType="+chainType,
+						    dataType: "json",
+						    success: function (data) {
+						        if (data.code == "00000") {
+									let jamPrice = data.data.jamPrice
+									jamPrice = Number(jamPrice)
+						            that.advertisePrice = jamPrice.toFixed(6);
+						        } else {
+						            console.log("出现错误: ", data.msg);
+						        }
+						    },
+						    error: function (jqXHR) {
+						        console.log(jqXHR)
+						    }
+						});
+					},
+					// 获取jam余额
+					async getJamBalance() {
+						let that = this
+						if (!this.isNull(defaultAccount)) {
+							var jamBalances = await jamInstance.methods.balanceOf(defaultAccount).call();
+							jamBalances = jamBalances / 1e18
+							jamBalances = Math.floor(jamBalances * 10000)
+							jamBalances = jamBalances / 10000
+							that.JAMbanlance = jamBalances
+							return jamBalances
+						}
+					},
+					// 是否授权JAM，返回true表示已授权，false未授权
+					async isApprove() {
+						var allowance = await jamInstance.methods.allowance(defaultAccount, mortgageAddr).call();
+						if (allowance == 0) {
+							this.approvalState =  false;
+						} else {
+							this.approvalState = true
+						}
+						console.log(this.approvalState)
+					},
+					// 授权JAM
+					async approveJam() {
+						let layopen = parent.layer.load(2, {time:50*1000})
+						jamInstance.methods.approve(mortgageAddr, MAX_INT).send({
+							from: defaultAccount,
+							gas: 500000
+						}).then(function(res){
+							console.log("授权JAM成功")
+							this.approvalState = true
+							$('.approval').addClass('sgray').removeClass('bg-theme')
+							parent.layer.msg("Approve JAM successfully")
+							parent.layer.close(layopen)
+						})
+					},
+					// 移除质押
+					async removeJam() {
+						let that = this
+						mortgageInstance.methods.remove().send({
+							from: defaultAccount,
+							gas: 2000000
+						}).then(async function(res){
+							parent.layer.msg("Successfully remove pledge")
+							console.log("移除质押成功")
+							// 修改状态isDelete为2
+							let postData = {
+								userAddr:defaultAccount,
+								chainType:chainType,
+								isDelete:2
+							}
+							console.log(postData)
+							let remove = await that.removeAdv(postData)
+							console.log(remove)
+							if(remove.code=='00000'){
+								that.approvalState = 3
+								that.clearData()
+								that.getData()
+							}
+						})
+					},
+					// 质押JAM
+					async mortgageJam() {
+						let that = this
+						if(!that.approvalState){
+							return
+						}
+						let layopens = parent.layer.load(2, {time: 50*1000})
+						var value = web3.utils.toWei(mortgageValue, 'ether');
+						mortgageInstance.methods.mortgage(value).send({
+							from: defaultAccount,
+							gas: 2000000
+						}).then(function(res){
+							parent.layer.msg("Successfully pledged JAM")
+							console.log("质押JAM成功")
+							parent.layer.closeAll()
+							that.showUpload()
+						})
+					},
+					isNull(obj) {
+					    if (typeof obj == "undefined" || obj == null || obj == "") {
+					        return true;
+					    } else {
+					        return false;
+					    }
+					},
+					pcLink(){
+						let that = this
+						layer.open({
+							type: 1,
+							title: false,
+							skin: 'layui-layer-demo',
+							closeBtn: true,
+							area: ['auto'],
+							shift: 2,
+							shadeClose: true,
+							content: $('.linkBox').html(),
+							success: function(layero, dindex) {
+								let linkBox = top.$('.metamaskbox')
+								linkBox.on('click',async function(){
+									that.linkWallet()
+									layer.close(dindex)
+								})
+							}
+						})
+					},
+					//复制分享地址
+					copyText(text, e) {
+						const clipboard = new ClipboardJS(e.target, {
+							text: () => text
+						})
+						clipboard.on('success', () => {
+							parent.layer.msg('Copy successfully')
+							// 释放内存
+							clipboard.destroy()
+						})
+						clipboard.on('error', () => {
+							// 不支持复制
+							parent.layer.msg('This browser does not support automatic copy')
+							// 释放内存
+							clipboard.destroy()
+						})
+						// 解决第一次点击不生效的问题，如果没有，第一次点击会不生效
+						clipboard.onClick(e)
+					},
+					//上传图片
+					async upLoadImgae(obj){
+						return new Promise(function (resolve, reject) {
+							saveFile(obj).then((res) => {
+								resolve(res)
+							})			
+						}).catch(err=>{
+							parent.layer.msg('Image upload failed, please try again')
+						})
+					},
+					// 出现Upload文件弹窗
+					showUpload(){
+						let that = this
+						let addPaycodeObj = ''
+						layer.open({
+							type: 1,
+							title: false,
+							skin: 'layui-layer-demo',
+							closeBtn: true,
+							area: ['auto'],
+							shift: 2,
+							shadeClose: true,
+							// uploadBox 
+							content: $('.uploadBox').html(),
+							success: function(layero, findex) {
+								let uploadcode = top.$('.uploadcode')
+								if(!addPaycodeObj){
+									 top.$('.showcont').hide()
+								}
+								uploadcode.on('change',function(e){
+									var that=this
+									addPaycodeObj = e.target.files[0]
+									that.originImage = e.target.files[0]
+									console.log(that.originImage)
+									let isLt5M= e.target.files[0].size / 1024 / 1024 < 8
+									if(!isLt5M){
+										parent.layer.msg('The uploaded picture cannot exceed 8M',{time:1200})
+										return
+									}
+									let fileRender = new FileReader()
+									fileRender.readAsDataURL(e.target.files[0])
+									fileRender.onload = function(datas){
+										let res = datas.target || datas.srcElement
+										top.$('.filepic').attr('src',res.result)
+										top.$('.showcont').show()
+									}
+								})
+								top.$('.delepic').on('click', function(){
+									addPaycodeObj=''
+									top.$('.showcont').hide()
+								})
+								$('.uploadSure').on('click',async function(){
+									// 刷新图片到OSS
+									let formParams = new FormData()
+									formParams.append('file',addPaycodeObj)
+									let adverImage =await that.upLoadImgae(formParams)
+									that.advertiseState = 2
+									that.advertisePic = adverImage.data
+									let postData = {
+										userAddr:defaultAccount,
+										imgUrl:adverImage.data,
+										chainType:chainType
+									}
+									await that.saveAdvertise(postData)
+									// 刷新RECORD
+									that.clearData()
+									that.getData()
+									//关闭弹窗
+									layer.close(findex)
+								})
+							}
+						})
+					},
+					//保存广告
+					async saveAdvertise(obj){
+						return new Promise(function (resolve, reject) {
+							saveAdvertisement(obj).then((res) => {
+								resolve(res)
+							})			
+						}).catch(err=>{
+							parent.layer.msg('Failed to create ad, please try again')
+						})
+					},
+					//广告操作
+					advOprate() {
+						let that = this
+						console.log(that.advertiseState)
+						//开始质押
+						if (that.advertiseState == 0) {
+							layer.open({
+								type: 1,
+								title: false,
+								skin: 'layui-layer-demo',
+								closeBtn: true,
+								area: ['auto'],
+								shift: 2,
+								shadeClose: true,
+								content: $('.createBox').html(),
+								success: function(layero, dindex) {
+									$('.approval').on('click', function(){
+										if(that.approvalState){
+											return
+										}else{
+											that.approveJam()
+										}
+									})
+									$('.confirmit').on('click', function(){
+										that.mortgageJam()
+									})
+								}
+							})
+						} else if (that.advertiseState == 1) {
+							//质押成功没上传照片
+							that.showUpload()
+						}else if(that.advertiseState == 3){
+							//删除广告未移除资产
+							this.removeJam()
+						}else {
+							//已经上传了广告
+							layer.open({
+								type: 1,
+								title: false,
+								skin: 'layui-layer-demo',
+								closeBtn: true,
+								area: ['auto'],
+								shift: 2,
+								shadeClose: true,
+								content: $('.deleteBox').html(),
+								success: function(layero, dindex) {
+									//删除广告后
+									$('.cancelAdv').on('click',async function() {
+										let postData = {
+											userAddr:defaultAccount,
+											chainType:chainType,
+											isDelete:1
+										}
+										console.log(postData)
+										let remove = await that.removeAdv(postData)
+										console.log(remove)
+										if(remove.code=='00000'){
+											that.advertiseState = 0
+											that.advertisePic = ''
+											//删除广告未移除资产
+											that.removeJam()
+										}
+										layer.close(dindex)
+									})
+								}
+							})
+						}
+					},
+					//删除广告
+					async removeAdv(obj){
+						return new Promise(function (resolve, reject) {
+							removeAdvertisement(obj).then((res) => {
+								resolve(res)
+							})			
+						}).catch(err=>{
+							console.log(err)
+							parent.layer.msg('Failed to delete ad, please try again')
+						})
+					},
+					firstPage() {
+						if (this.page <= 2) {
+							layer.msg('The current page is the first page')
+							return
+						}
+						this.clearData()
+						this.getData()
+					},
+					nextPage() {
+						if (this.page == this.allPage + 1) {
+							layer.msg('The current page is the last page')
+							return
+						} else {
+							this.finish = false
+							this.recordList = []
+							this.getData()
+						}
+					},
+					lastPage() {
+						if (this.page <= 1) {
+							layer.msg('The current page is the home page')
+							return
+						} else {
+							this.page = this.page - 1
+							this.finish = false
+							this.recordList = []
+							this.getData()
+						}
+					},
+					clearData() {
+						this.page = 1
+						this.finish = false
+						this.recordList = []
+					},
+					getData() {
+						if (this.finish) return
+						let param = {
+							pageNo: this.page,
+							pageSize: this.pageSize,
+							chainType:this.chainType
+						}
+						getAdvlist(param).then((res) => {
+							console.log(res.data.List)
+							if(!res.data.List)return
+							this.recordList = res.data.List
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

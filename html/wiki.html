@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Wiki</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="did" name="description">
+		<meta content="did" name="keywords">
+		<link href="img/logo.png" rel="icon">
+		<link href="img/logo.png" rel="apple-touch-icon">
+		<link rel="stylesheet" type="text/css" href="css/aos.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<!--  app容器 -->
+		<div>
+		<header id="header" class="fixed-top">
+			<div class="container d-flex flex-jsb align-items-center userheaders" >
+				<h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="img/logo.png" alt=""
+							class="img-fluid"></h1>
+				<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''">
+					<ul>
+						<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/logo.png"></li>
+						<li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+						<li><a class="nav-link scrollto" href="liquid.html">Liquidity</a></li>
+						<!--  <i class="bi bi-chevron-down"></i> -->
+					</ul>
+					<i class="bi bi-list mobile-nav-toggle" @click="toggleMenu"></i>
+				</nav>
+			</div>
+		</header>
+		<div class="">
+			<section id="wiki" class="position-relative pluscont wiki h100" >
+				<div class="wikicont fwb color-defalut">
+					Jambo Network Dapp FAQ
+				</div>
+				<div class="container">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title fwb">
+									<a data-toggle="collapse" data-parent="#accordion" 
+									   href="#collapseOne">
+										Introduction to Jambo Network
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="d-flex align-items-center">
+										<div class="blacksqure"></div>
+										<span class="qatitle fwb ">What is Jambo Network?</span>
+									</div>
+									<div class="answer">
+										As the first blockchain ad-tech support platform, Jambo has been committed to creating a transparent and credible decentralized 
+										advertising industry value ecology. With the Polkadot heterogeneous multi-chain architecture, the platform can realize the value 
+										interoperability of different advertising industry chains, make the database transparent, greatly improve the service development of the 
+										blockchain advertising industry, and accelerate the serving efficiency of digital advertising.
+									</div>
+									<div class="d-flex align-items-center question2">
+										<div class="blacksqure"></div>
+										<span class="qatitle fwb ">What are the potentials of Jambo within Dapp market?</span>
+									</div>
+									<div class="answer">
+										Currently, Dapp such as wallets, games, social networking, and finance are not involved in non-advertising display business, 
+										which will become one of Jambo's strategic ecological expansion. 
+										Through the Jambo cross-chain slot, both advertisers and channel parties can choose a suitable form of advertising through the Jambo advertising protocol to publish with one click. The audience, the coverage area, the playback period, the number of playbacks, etc. are all recorded on the chain,
+										 creating a rich The new ecology of advertising media on the chain leads the development of the blockchain advertising industry.
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title fwb">
+									<a data-toggle="collapse" data-parent="#accordion" 
+									   href="#collapseTwo">
+										Tokenomics
+									</a>
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="d-flex align-items-center">
+										<div class="blacksqure"></div>
+										<span class="qatitle fwb ">What is $JAM?</span>
+									</div>
+									<div class="answer">
+										JAM is the value carrier of Jambo Network. The stability of Jambo ecosystem enables permanent effective value growth of JAM. 
+										All stakeholders including advertisers, channels and users can share the distributed online valuation and dividends of JAM within Jambo platform.
+										 JAM is the only cryptocurrency used for value exchange. 1.Cross-chain services on Jambo technology platform 2.
+										Liquidity Staking of JAMBO advertising alliance 3.Exchange media between advertisements and channels
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title fwb">
+									<a data-toggle="collapse" data-parent="#accordion" 
+									   href="#collapseThree">
+										Getting Started
+									</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer id="footer">
+				<div class="container">
+					<div class="footerbox">
+						<div class="footitem">
+							<img src="img/h1.png" class="footimg">
+							<span class="hidden-xs">Telegram</span>
+						</div>
+						<div class="footitem">
+							<img src="img/h2.png" class="footimg">
+							<span class="hidden-xs">Medium</span>
+						</div>
+						<div class="footitem">
+							<img src="img/h3.png" class="footimg">
+							<span class="hidden-xs">Github</span>
+						</div>
+						<a class="footitem" href="wiki.html">
+							<img src="img/h4.png" class="footimg">
+							<span class="hidden-xs">Wiki</span>
+						</a>
+					</div>
+				</div>
+			</footer>
+			</div>
+		</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/aos.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		</script>
+	</body>
+</html>

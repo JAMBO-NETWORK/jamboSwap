@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Liquidity</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="did" name="description">
+		<meta content="did" name="keywords">
+		<link href="img/logo.png" rel="icon">
+		<link href="img/logo.png" rel="apple-touch-icon">
+		<link rel="stylesheet" type="text/css" href="css/aos.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<header id="header" class="fixed-top ">
+				<div class="container d-flex flex-jsb align-items-center userheaders">
+					<h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="img/logo.png" alt=""
+								class="img-fluid"></h1>
+					<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''">
+						<ul>
+							<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/logo.png"></li>
+							<li><a class="nav-link scrollto" href="index.html">Home</a><a class="nav-link scrollto" href="index.html">Home</a></li>
+							<li><a class="nav-link scrollto active" href="liquid.html">Liquidity</a></li>
+							<!--  <i class="bi bi-chevron-down"></i> -->
+							<li class="dropdown" v-if="!walletaddress"><a href="#"><span class="walletdrop">Collect Wallet</span></a>
+								<ul class="languageList">
+									<li class="linkwallet"><a href="#" lang="cn" @click="pcLink">
+											<p class="coinname">B</p> BSC
+										</a></li>
+									<li><a href="#" lang="cn">
+											<p class="coinname">H</p> HECO(on the way)
+										</a></li>
+									<li><a href="#" lang="cn">
+											<p class="coinname">P</p> Plokadot(on the way)
+										</a></li>
+								</ul>
+							</li>
+							<li v-if="walletaddress" class="walletbox"><span class="walletaddress">{{walletaddress}}</span></li>
+						</ul>
+						<i class="bi bi-list mobile-nav-toggle" @click="toggleMenu"></i>
+					</nav>
+				</div>
+			</header>
+		
+		<div class="pluscont liqubox">
+			<section class="position-relative py30" data-aos="fade-up" data-aos-delay="100">
+				<div class="container">
+					<div class="hidden-sm hidden-md hidden-xs d-flex flex-jsb align-items-center mb20 fwb">
+						<div class="topnumber">
+							<p>JAM Price:${{advertisePrice}}</p>
+							<p class="mt6"><span class="linkspan">Buy JAM</span> or <span class="linkspan">Add Liquidity</span></p>
+						</div>
+						<div class="">
+							<p class="tvlNumber">TVL {{tvlNum}}</p>
+							<p class="topnumber">Deposited ${{tvlAmount}}</p>
+						</div>
+					</div>
+					<div class="hidden-sm hidden-md hidden-lg">
+						<div class="bg-box px20 py20 d-flex align-items-center flex-jsb">
+							<div class="phoneData number1">
+								<p>${{advertisePrice}}</p>
+								<p class="color-sgrey mt6">JAM Price</p>
+							</div>
+							<div class="phoneData number2">
+								<p>{{tvlNum}}</p>
+								<p class="color-sgrey mt6">TVL</p>
+							</div>
+							<div class="phoneData number3">
+								<p>${{tvlAmount}}</p>
+								<p class="color-sgrey mt6">Deposited</p>
+							</div>
+						</div>
+						<div class="mt20 d-flex flex-jsb">
+							<div class="wentitem"><a class="nav-link scrollto" href="https://exchange.pancakeswap.finance/#/swap">Buy JAM</a></div>
+							<div class="wentitem"><a class="nav-link scrollto" href="https://exchange.pancakeswap.finance/#/add/BNB/undefined">Add Liquidity</a></div>
+						</div>
+					</div>
+					<!-- liquid管理 -->
+					<div class="liqucont pt15" v-for="(item,index) in listInit" :key="index">
+						<!-- -----0---- -->
+						<div class="liqutain mb20">
+							<div class="liquitem" @click="changeLiqu(index)">
+								<div class="liquleft">
+									<div class="coinbox d-flex align-items-center">
+										<img src="img/w-3.png" class="coinpicture">
+										<div>
+											<p class="fwb liquname">{{item.name}}</p>
+											<p class="color-sgrey mt2 liqulabel">Users: JamboSwap</p>
+										</div>
+									</div>
+									<div class="text-center liquapy">
+										<p class="fwb liquname">{{item.apy}}%</p>
+										<p class="color-sgrey mt2 liqulabel">APY</p>
+									</div>
+								</div>
+								<div class="liquright">
+									<div class="flex1 text-center linebox">
+										<p class="fwb liquname">{{item.tokenBalanceNum}}</p>
+										<p class="color-sgrey mt2 liqulabel">Balance</p>
+									</div>
+									<div class="flex1 text-center linebox">
+										<p class="fwb liquname">{{item.tokenBalanceAmount}}</p>
+										<p class="color-sgrey mt2 liqulabel">Deposited</p>
+									</div>
+									<div class="flex1 text-center linebox">
+										<p class="fwb liquname">1X</p>
+										<p class="color-sgrey mt2 liqulabel">Multiplier</p>
+									</div>
+									<div class="flex1 text-center">
+										<p class="fwb liquname">${{item.tvlAmount}}</p>
+										<p class="color-sgrey mt2 liqulabel">TVL</p>
+									</div>
+								</div>
+							</div>
+							<div class="liquform" v-if="coinIndex==index&&coinList[index].state">
+								<div class="formtop">
+									<div class="flex1 formitem">
+										<p class="color-sgrey liqulabel">Balance: {{item.tokenBalanceNum}} {{item.name}}</p>
+										<div class="position-relative formbox mt10">
+											<input type="number" v-model="depositAmount" placeholder="Enter the number" />
+											<span class="fwb maxnumber" @click="depositMax(index)">MAX</span>
+										</div>
+										<div class="d-flex align-items-center flex-jsb mt16">
+											<!-- sgray -->
+											<button type="button" class="createBtn bg-theme color-white fwb" :id=setId(index) @click="approve(index)">APPROVE</button>
+											<button type="button" class="createBtn bg-theme color-white fwb" @click="add(index)">ADD</button>
+										</div>
+									</div>
+									<div class="flex1 formitem">
+										<p class="color-sgrey liqulabel">Balance: {{item.depositBalanceNum}} {{item.name}}</p>
+										<div class="position-relative formbox mt10">
+											<input type="number" v-model="withdrawAmount" placeholder="Enter the number" />
+											<span class="fwb maxnumber" @click="withdrawMax(index)">MAX</span>
+										</div>
+										<div class="mt16">
+											<button type="button" class="createBtn bg-theme color-white fwb withbtn" @click="withdraw(index)">WITHDRAW</button>
+										</div>
+									</div>
+									<div class="formharvest">
+										<p class="color-sgrey liqulabel">JAM Rewards</p>
+										<p class="mt10 liquname">{{item.rewardNum}}</p>
+										<p class="mt6 liquname">${{item.rewardAmount}}</p>
+										<div class="mt16">
+											<button type="button" class="createBtn bg-theme color-white fwb withbtn" @click="harvest(index)">HARVEST</button>
+										</div>
+									</div>
+								</div>
+								<div class="formbtm">
+									<div class="formitembtm formjsb">
+										<p class="color-sgrey liqulabel">JAM Price：</p>
+										<p class="liqulabel">${{advertisePrice}}</p>
+									</div>
+									<div class="formitembtm formjsb">
+										<p class="color-sgrey liqulabel">Total liquidity：</p>
+										<p class="liqulabel">{{item.tvlNum}}</p>
+									</div>
+									<div class="formitembtm formjsb">
+										<p class="color-sgrey liqulabel">LP price：</p>
+										<p class="liqulabel">${{item.lpPrice}}</p>
+									</div>
+									<div class="formitembtm ">
+										<p class="color-theme liqulabel">View BSC Contract</p>
+										<img src="img/tra.png" class="traimg">
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			
+			<!-- 已经有广告删除弹窗 -->
+			<div class="deleteBox hidden">
+				<div class="nopowerbox pt15">
+					<p class="tips">Remove advertisement？</p>
+					<button class="confirmbtn cancelAdv">COMFIRM</button>
+				</div>
+			</div>
+			<!-- 链接钱包的弹窗 -->
+			<div class="linkBox hidden">
+				<div class="nopowerbox pt15">
+					<p class="tips fwb">Collect a Wallet</p>
+					<div class="d-flex align-items-center align-items-center metamaskbox">
+						<input type="text" placeholder="Metamask" disabled="disabled" class="metamask flex1"> 
+						<img src="img/w.png">
+					</div>
+				</div>
+			</div>
+			<!-- 创建广告先授权后上传文件 -->
+			<div class="createBox hidden">
+				<div class="nopowerbox pt15">
+					<p class="tips">Stake $JAM</p>
+					<p class="tips">to create an advertisement</p>
+					<div class="approvalbox">
+						<div class="d-flex flex-jsb align-items-center">
+							<span class="color-gray f14">JAM:</span>
+							<span class="fwb color-red f16">-10</span>
+						</div>
+						<div class="d-flex flex-jsb align-items-center mt6">
+							<span class="color-gray f14">JAM:</span>
+							<span class="fwb color333 f16">2084990</span>
+						</div>
+					</div>
+					<button class="confirmbtn sureApproval">COMFIRM</button>
+				</div>
+			</div>
+		</div>
+		<footer id="footer">
+			<div class="container">
+				<div class="footerbox">
+					<div class="footitem">
+						<img src="img/h1.png" class="footimg">
+						<span class="hidden-xs">Telegram</span>
+					</div>
+					<div class="footitem">
+						<img src="img/h2.png" class="footimg">
+						<span class="hidden-xs">Medium</span>
+					</div>
+					<div class="footitem">
+						<img src="img/h3.png" class="footimg">
+						<span class="hidden-xs">Github</span>
+					</div>
+					<a class="footitem" href="wiki.html">
+						<img src="img/h4.png" class="footimg">
+						<span class="hidden-xs">Wiki</span>
+					</a>
+				</div>
+			</div>
+		</footer>
+		</div>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/aos.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/qs.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/http.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/query.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/contracts/web3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/address.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/mining_abi.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/token_abi.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var web3Provider;
+			var web3;
+			
+			var app = new Vue({
+				el: '#app',
+				data: {
+					toggleState:false,
+					walletaddress:'',
+					depositAmount:'',
+					withdrawAmount:'',
+					advertisePrice:0.000000,
+					tvlNum:0.00,
+					tvlAmount:0.00,
+					coinList:[{state:false},{state:false},{state:false},{state:false}],//币种个数
+					coinIndex:0,//默认为第一个币种
+					// TODO，上线记得修改，id要对应数据库中的lpId
+					listInit:[
+						{id:0,name:'USDT',address:'0x91756aa35eD745C4CE58C906a66005b19509F834'
+							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'0'},
+						{id:1,name:'JAM-BUSD',address:'0x91756aa35eD745C4CE58C906a66005b19509F834'
+							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'1'},
+						{id:2,name:'JAM-BNB',address:'0x91756aa35eD745C4CE58C906a66005b19509F834'
+							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'1'}
+					],
+				},
+				async created() {
+					// this.walletaddress = localStorage.getItem('JamAddress')
+					await this.linkWallet();
+					await this.getDefaultAccount();
+					await this.listLiqInfo(); // 流动池信息
+					this.listenEthereum();
+					this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
+					
+					setInterval(async () => {
+						this.listLiqInfo(); // 流动池信息
+					}, 30061);
+					setInterval(async () => {
+						this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
+					}, 6000);
+				},
+				methods: {
+					toggleMenu(){
+						this.toggleState = !this.toggleState
+					},
+					async linkWallet() {
+						if (ethereum) {
+							web3Provider = ethereum;
+							// 需要请求用户授权
+							try {
+								ethereum.enable();
+							} catch (error) {
+								parent.layer.msg("用户取消授权");
+								return;
+							}
+						} else if (web3) {
+							// MetaMask Legacy dapp browsers...
+							web3Provider = web3.currentProvider;
+							console.log("web3.currentProvider:");
+							console.log(web3.currentProvider);
+						} else {
+							web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+							console.log("https://http-testnet.hecochain.com");
+						}
+						web3 = new Web3(web3Provider);
+						web3.eth.net.getId((err, netId) => {
+							console.log("netId: ", netId);
+						});
+						miningInstance = await new web3.eth.Contract(miningAbi, miningAddr);
+						jamInstance = await new web3.eth.Contract(tokenAbi, jamAddr);
+						
+						
+					},
+					pcLink(){
+						let that = this
+						layer.open({
+							type: 1,
+							title: false,
+							skin: 'layui-layer-demo',
+							closeBtn: true,
+							area: ['auto'],
+							shift: 2,
+							shadeClose: true,
+							content: $('.linkBox').html(),
+							success: function(layero, dindex) {
+								let linkBox = top.$('.metamaskbox')
+								linkBox.on('click',async function(){
+									that.linkWallet()
+									layer.close(dindex)
+								})
+							}
+						})
+					},
+					listenEthereum() {
+						ethereum.on('accountsChanged', function (accounts) {
+						    console.log(accounts[0])
+							defaultAccount = accounts[0];
+							window.location.reload();
+						})
+						ethereum.on('networkChanged', function (netId) {
+						    console.log("netId: ", netId);//一旦切换网络这里就会执行
+							window.location.reload();
+						})
+					},
+					async getDefaultAccount() {
+						let that = this
+						await web3.eth.getAccounts(function (err, accounts) {
+							if (err) {
+								return;
+							}
+							if (accounts.length == 0) {
+								return;
+							}
+							defaultAccount = accounts[0];
+							that.walletaddress = that.getUserAddr(defaultAccount)
+							console.log("defaultAccount: ", defaultAccount);
+						})
+					},
+					getUserAddr(addr) {
+						return addr.substring(0, 8) + "..." + addr.substring(addr.length - 8, addr.length);
+					},
+					// 流动池信息
+					async listLiqInfo() {
+						var that = this;
+						let listLiq = this.listInit;
+						for (let i = 0; i < listLiq.length; i++) {
+							let map = listLiq[i];
+							let id = map["id"];
+							$.ajax({
+							    type: "GET",
+							    url: url + "/v1/liquidityInfo?chainType="+chainType+"&lpId="+id,
+							    dataType: "json",
+							    success: function (data) {
+							        if (data.code == "00000") {
+										that.padding(id, data.data);
+							        } else {
+							            console.log("出现错误: ", data.message);
+							        }
+							    },
+							    error: function (jqXHR) {
+							        console.log(jqXHR)
+							    }
+							});
+						}
+					},
+					async padding(i, liqInfo) {
+						let lpAddress = liqInfo.lpAddress;
+						this.listInit[i]["apy"] = liqInfo.apy
+						this.listInit[i]["tvlNum"] = liqInfo.totalLiquidity
+						this.listInit[i]["tvlAmount"] = liqInfo.totalAmount
+						this.listInit[i]["lpPrice"] = Number(liqInfo.lpPrice).toFixed(6)
+						
+						if (!this.isNull(defaultAccount)) {
+							// 用户的LP余额
+							let lpInstance = await new web3.eth.Contract(tokenAbi, lpAddress);
+							let tokenBalanceNum = await lpInstance.methods.balanceOf(defaultAccount).call()
+							tokenBalanceNum = tokenBalanceNum / base18
+							this.listInit[i]["tokenBalanceNum"] = tokenBalanceNum
+							tokenBalanceAmount = Number(tokenBalanceNum * liqInfo.lpPrice).toFixed(2)
+							this.listInit[i]["tokenBalanceAmount"] = tokenBalanceAmount
+							// 获取用户可以提取的余额
+							var userInfo = await miningInstance.methods.userInfo(i, defaultAccount).call();
+							var depositBalanceNum = web3.utils.fromWei(userInfo["amount"], 'ether');
+							this.listInit[i]["depositBalanceNum"] = depositBalanceNum
+							// 用户的奖励
+							let earningsObj = await miningInstance.methods.pending(i, defaultAccount).call();
+							var rewardNum = web3.utils.fromWei(earningsObj, 'ether');
+							this.listInit[i]["rewardNum"] = Number(rewardNum).toFixed(4)
+							this.listInit[i]["rewardAmount"] = Number(rewardNum * this.advertisePrice).toFixed(4)
+						}
+					},
+					isNull(obj) {
+					    if (typeof obj == "undefined" || obj == null || obj == "") {
+					        return true;
+					    } else {
+					        return false;
+					    }
+					},
+					// 获取总锁仓和jam价格
+					getTvlAndJamPrice() {
+						var that = this;
+						$.ajax({
+						    type: "GET",
+						    url: url + "/v1/getTotalTvlAndJamPrice?chainType="+chainType,
+						    dataType: "json",
+						    success: function (data) {
+						        if (data.code == "00000") {
+									let jamPrice = data.data.jamPrice
+									jamPrice = Number(jamPrice)
+						            that.advertisePrice = jamPrice.toFixed(6);
+									let tvlNum = data.data.tvlNum
+									tvlNum = Number(tvlNum)
+									that.tvlNum = tvlNum.toFixed(2);
+									let tvlAmount = data.data.tvlAmount
+									tvlAmount = Number(tvlAmount)
+									that.tvlAmount = tvlAmount.toFixed(2);
+						        } else {
+						            console.log("出现错误: ", data.msg);
+						        }
+						    },
+						    error: function (jqXHR) {
+						        console.log(jqXHR)
+						    }
+						});
+					},
+					depositMax(index) {
+						let map = this.listInit[index]
+						this.depositAmount = map["tokenBalanceNum"];
+					},
+					withdrawMax(index) {
+						let map = this.listInit[index]
+						this.withdrawAmount = map["depositBalanceNum"];
+					},
+					setId(cn) {
+						return "lpApprove" + cn
+					},
+					async changeLiqu(ind){
+						this.coinIndex = ind
+						this.coinList[ind].state = !this.coinList[ind].state
+						this.depositAmount = 0
+						this.withdrawAmount = 0
+						
+						// 查询是否已授权
+						let map = this.listInit[ind]
+						let lpAddress = map["address"];
+						let lpInstance = await new web3.eth.Contract(tokenAbi, lpAddress);
+						var allowance = await lpInstance.methods.allowance(defaultAccount, miningAddr).call();
+						if (allowance > 0) { // 已授权
+							$("#lpApprove"+ind).removeClass("bg-theme")
+						}
+						
+					},
+					async approve(index) {
+						let map = this.listInit[index]
+						let lpAddress = map["address"];
+						let lpInstance = await new web3.eth.Contract(tokenAbi, lpAddress);
+						lpInstance.methods.approve(miningAddr, MAX_INT).send({
+							from: defaultAccount,
+							gas: 500000
+						}).then(function(res){
+							console.log("授权成功")
+							$("#lpApprove"+index).removeClass("bg-theme")
+						})
+					},
+					// 质押
+					async add(index) {
+						let that = this;
+						let input = this.depositAmount;
+						console.log("input: ", input)
+						if (input <= 0) {
+							parent.layer.msg("Please enter a value greater than 0")
+							return
+						}
+						let map = this.listInit[index]
+						let tokenBalanceNum = map["tokenBalanceNum"];
+						if (Number(input) > Number(tokenBalanceNum)) {
+							parent.layer.msg("Insufficient balance")
+							return
+						}
+						let lpId = map["id"];
+						let value = web3.utils.toWei(input, 'ether')
+						console.log("value: ", value)
+						miningInstance.methods.deposit(lpId, value).send({
+							from: defaultAccount,
+							gas: 2000000
+						}).then(function(res){
+							console.log("质押成功")
+							// 更新流动池信息
+							that.updateLiquidityInfoBack(lpId);
+						})
+					},
+					// 提现
+					async withdraw(index) {
+						let that = this;
+						let input = this.withdrawAmount;
+						console.log("input: ", input)
+						if (input <= 0) {
+							parent.layer.msg("Please enter a value greater than 0")
+							return
+						}
+						let map = this.listInit[index]
+						let depositBalanceNum = map["depositBalanceNum"];
+						console.log("depositBalanceNum: ", depositBalanceNum)
+						if (Number(input) > Number(depositBalanceNum)) {
+							parent.layer.msg("Insufficient balance")
+							return
+						}
+						let lpId = map["id"];
+						let value = web3.utils.toWei(input, 'ether')
+						console.log("value: ", value)
+						miningInstance.methods.withdraw(lpId, value).send({
+							from: defaultAccount,
+							gas: 2000000
+						}).then(function(res){
+							console.log("提现成功")
+							// 更新流动池信息
+							that.updateLiquidityInfoBack(lpId);
+						})
+					},
+					// 提取奖励
+					async harvest(index) {
+						let that = this;
+						let map = this.listInit[index]
+						let lpId = map["id"];
+						let rewardNum = await miningInstance.methods.pending(lpId, defaultAccount).call();
+						if (rewardNum == 0) {
+							return
+						}
+						console.log("rewardNum: ", rewardNum)
+						miningInstance.methods.withdraw(lpId, 0).send({
+							from: defaultAccount,
+							gas: 2000000
+						}).then(function(res){
+							console.log("提取奖励成功")
+							// 更新前端流动池信息
+							that.updateLiquidityInfoFront(lpId);
+						})
+						
+					},
+					// 更新后端流动池信息
+					updateLiquidityInfoBack(lpId) {
+						var that = this;
+						data = {"chainType" : chainType, "lpId" : lpId}
+						axios.post(url + "/v1/updateLiquidityInfo", data).then(res => {
+							that.updateLiquidityInfoFront(lpId);
+							that.getTvlAndJamPrice()
+						})
+					},
+					// 更新前端流动池信息
+					updateLiquidityInfoFront(lpId) {
+						var that = this;
+						$.ajax({
+						    type: "GET",
+						    url: url + "/v1/liquidityInfo?chainType="+chainType+"&lpId="+lpId,
+						    dataType: "json",
+						    success: function (data) {
+						        if (data.code == "00000") {
+									that.padding(lpId, data.data);
+						        } else {
+						            console.log("出现错误: ", data.message);
+						        }
+						    },
+						    error: function (jqXHR) {
+						        console.log(jqXHR)
+						    }
+						});
+					},
+					getData() {
+						
+						getEntrustByStatus(param).then((res) => {
+							
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
