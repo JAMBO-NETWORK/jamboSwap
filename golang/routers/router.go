@@ -27,9 +27,13 @@ func init() {
 	beego.Router("/v1/saveAdvertisement", &controllers.UserController{}, "post:SaveAdvertisement")
 	beego.Router("/v1/hasAdvertisement", &controllers.UserController{}, "get:HasAdvertisement")
 	beego.Router("/v1/list", &controllers.UserController{}, "get:List")
+	beego.Router("/v1/addressList", &controllers.UserController{}, "get:AddressList")
 	beego.Router("/v1/removeAdvertisement", &controllers.UserController{}, "post:RemoveAdvertisement")
 	beego.Router("/v1/getTotalTvlAndJamPrice", &controllers.LiquidityController{}, "get:GetTotalTvlAndJamPrice")
 	beego.Router("/v1/liquidityInfo", &controllers.LiquidityController{}, "get:LiquidityInfo")
 	beego.Router("/v1/updateLiquidityInfo", &controllers.LiquidityController{}, "post:UpdateLiquidityInfo")
+	beego.Router("/v1/hideAdvertisement", &controllers.UserController{}, "post:HideAdvertisement")
+	beego.Router("/v1/updateSortNum", &controllers.UserController{}, "post:UpdateSortNum")
+	beego.Router("/v1/openAdvertisement", &controllers.UserController{}, "post:OpenAdvertisement")
 
 }

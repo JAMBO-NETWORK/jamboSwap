@@ -7,6 +7,7 @@ import (
 	"jamSwap/mvc/bo"
 	"jamSwap/mvc/service"
 	"jamSwap/utils/task"
+	"jamSwap/utils/util"
 )
 
 type LiquidityController struct {
@@ -72,8 +73,17 @@ func (liq *LiquidityController) UpdateLiquidityInfo() {
 		return
 	}
 
+	// 验证签名
+	paramMap := make(map[string]interface{})
+	paramMap["chainType"] = liqBo.ChainType
+	paramMap["lpId"] = liqBo.LpId
+	if ok, _ := util.VerifySign(paramMap, liqBo.Sign, "&"); !ok {
+		response.Code = "00004"
+		response.Message = "签名错误"
+	}
+
 	// 更新流动池信息
-	task.UpdateLiquidityInfo(liqBo.ChainType)
+	task.UpdateLiquidityInfoPanic(liqBo.ChainType)
 	liq.Data["json"] = response
 	liq.ServeJSON()
 }

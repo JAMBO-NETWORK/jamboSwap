@@ -42,7 +42,7 @@ contract Mining is Ownable {
     uint256 public totalAllocPoint = 0;
     // The block number when yam mining starts.
     uint256 public startBlock;
-
+    
     // ------------------------用于统计用户---------------------------------
     uint256 public userIdCount;
     mapping(address => uint256) public userIdMap;
@@ -63,15 +63,15 @@ contract Mining is Ownable {
         massUpdatePools();
         yamPerBlock = _newPerBlock;
     }
-
+    
     function changeYam(IYam _yam) public onlyOwner {
-        yam = _yam;
+       yam = _yam;
     }
 
     function poolLength() public view returns (uint256) {
         return poolInfo.length;
     }
-
+    
     function userAddrsLength() public view returns (uint256) {
         return userAddrs.length;
     }
@@ -107,7 +107,7 @@ contract Mining is Ownable {
     function getYamBlockReward(uint256 _lastRewardBlock) public view returns (uint256) {
         return (block.number.sub(_lastRewardBlock)).mul(yamPerBlock);
     }
-
+    
     // Update reward variables for all pools. Be careful of gas spending!
     function massUpdatePools() public {
         uint256 length = poolInfo.length;
@@ -122,7 +122,8 @@ contract Mining is Ownable {
         if (block.number <= pool.lastRewardBlock) {
             return;
         }
-        uint256 lpSupply = pool.lpToken.balanceOf(address(this));
+        // uint256 lpSupply = pool.lpToken.balanceOf(address(this));
+        uint256 lpSupply = pool.totalAmount;
         if (lpSupply == 0) {
             pool.lastRewardBlock = block.number;
             return;
@@ -158,7 +159,7 @@ contract Mining is Ownable {
         }
         return 0;
     }
-
+    
     // Deposit LP tokens to HecoPool for yam allocation.
     function deposit(uint256 _pid, uint256 _amount) public notPause {
         // 统计用户
@@ -167,7 +168,7 @@ contract Mining is Ownable {
             userIdMap[msg.sender] = userIdCount;
             userAddrs.push(msg.sender);
         }
-
+        
         depositYam(_pid, _amount, msg.sender);
     }
 

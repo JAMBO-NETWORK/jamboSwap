@@ -9,23 +9,23 @@ import "./IYam.sol";
 contract Mortgage is Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IYam;
-
+    
     uint256 public amount = 10; // 需要抵押的数量
-
+    
     IYam public yam;
-
+    
     struct User {
         address user;
         uint256 amount;
     }
-
+    
     address[] public userAddrs;
     mapping(address => User) public userMap;
-
+    
     constructor(IYam _yam) {
         yam = _yam;
     }
-
+    
     function mortgage(uint256 _amount) public {
         require(_amount >= amount.mul(1e18), "Not enough mortgage amount");
         address _sender = _msgSender();
@@ -40,7 +40,7 @@ contract Mortgage is Ownable {
             userMap[_sender].amount = userMap[_sender].amount.add(_amount);
         }
     }
-
+    
     function remove() public {
         address _sender = _msgSender();
         uint256 _amount = userMap[_sender].amount;
@@ -49,18 +49,18 @@ contract Mortgage is Ownable {
             yam.safeTransfer(_sender, _amount);
         }
     }
-
+    
     function userAddrsLength() public view returns (uint256) {
         return userAddrs.length;
     }
-
+    
     function setYam(IYam _yam) public onlyOwner {
         yam = _yam;
     }
-
+    
     function setAmount(uint256 _newAmount) public onlyOwner {
         amount = _newAmount;
     }
-
-
+    
+    
 }

@@ -9,6 +9,8 @@ type UserAdvertisement struct {
 	ImgUrl     string    `json:"imgUrl"`    // 广告url
 	ChainType  string    `json:"chainType"` // 链类型：ETH,HECO,BSC,DOT
 	IsDelete   int       `json:"isDelete"`
+	IsHide     int       `json:"isHide"`
+	SortNum    int       `json:"sortNum"`
 	CreateTime time.Time `json:"createTime"`
 	UpdateTime time.Time `json:"updateTime"`
 }

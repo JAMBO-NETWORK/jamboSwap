@@ -125,7 +125,9 @@
       this.nextElementSibling.classList.toggle('dropdown-active')
     }
   }, true)
-
+	on('click', '.navbar .dropdown ', function(e) {
+    event.stopPropagation()
+  }, true)
   /**
    * Scrool with ofset on links with a class name .scrollto
    */

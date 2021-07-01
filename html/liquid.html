@@ -6,8 +6,8 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<meta content="did" name="description">
 		<meta content="did" name="keywords">
-		<link href="img/logo.png" rel="icon">
-		<link href="img/logo.png" rel="apple-touch-icon">
+		<link href="img/favicon.ico" rel="icon">
+		<link href="img/favicon.ico" rel="apple-touch-icon">
 		<link rel="stylesheet" type="text/css" href="css/aos.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -15,20 +15,52 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
-		<div id="app" v-cloak>
+		<div id="app" v-cloak  class="pluscont ">
 			<header id="header" class="fixed-top ">
 				<div class="container d-flex flex-jsb align-items-center userheaders">
-					<h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="img/logo.png" alt=""
-								class="img-fluid"></h1>
-					<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''">
-						<ul>
+					<h1 class="logo me-auto"><a href="index.html" class="logo me-auto">
+						<img src="img/logo.png" alt=""class="img-fluid hidden-xs">
+						<img src="./img/logophone.png" alt="" class="img-fluid hidden-lg hidden-md hidden-sm logophone"></a>
+					</h1>
+					<span class="fwb f18 hidden-lg hidden-md hidden-sm color-defalut phonetit">LIQUIDITY
+					<img src="img/loading.gif" class="ml10" style="width: 15px;" v-if="imgstate"/></span>
+					<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''" @click="toggleMenu">
+						<ul  @click="toggleMenu">
+							<li class="phoneshowlink hidden-lg hidden-md hidden-sm">
+								<div>
+									<a class="footitem" href="https://t.me/JamboNetwork" target="_blank">
+										<img src="img/h1.png" class="footimg">
+										<span>Telegram</span>
+									</a>
+								</div>
+								<div>
+									<a class="footitem" href="https://medium.com/@jambonetofficial" target="_blank">
+										<img src="img/h2.png" class="footimg">
+										<span>Medium</span>
+									</a>
+								</div>
+								<div>
+									<a class="footitem" href="https://github.com/JAMBO-NETWORK" target="_blank">
+										<img src="img/h3.png" class="footimg">
+										<span>Github</span>
+									</a>
+									
+								</div>
+								<div>
+									<a class="footitem" href="wiki.html" target="_blank">
+										<img src="img/h4.png" class="footimg">
+										<span>Wiki</span>
+									</a>
+								</div>
+							</li>
 							<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/logo.png"></li>
-							<li><a class="nav-link scrollto" href="index.html">Home</a><a class="nav-link scrollto" href="index.html">Home</a></li>
-							<li><a class="nav-link scrollto active" href="liquid.html">Liquidity</a></li>
+							<li><a class="nav-link scrollto" href="index.html">Home</a></li>
+							<li><a class="nav-link scrollto active" href="liquid.html">Liquidity
+							<img v-if="imgstate" src="img/loading.gif" class="ml10" style="width: 15px;" /></a></li>
 							<!--  <i class="bi bi-chevron-down"></i> -->
-							<li class="dropdown" v-if="!walletaddress"><a href="#"><span class="walletdrop">Collect Wallet</span></a>
+							<li class="dropdown" v-if="!walletaddress"><a href="#" class="walletcollrt" @click="showmobilemask"><span class="walletdrop">Collect Wallet</span></a>
 								<ul class="languageList">
-									<li class="linkwallet"><a href="#" lang="cn" @click="pcLink">
+									<li class="linkwallet"><a href="#" lang="cn" @click.stop="pcLink">
 											<p class="coinname">B</p> BSC
 										</a></li>
 									<li><a href="#" lang="cn">
@@ -41,18 +73,18 @@
 							</li>
 							<li v-if="walletaddress" class="walletbox"><span class="walletaddress">{{walletaddress}}</span></li>
 						</ul>
-						<i class="bi bi-list mobile-nav-toggle" @click="toggleMenu"></i>
+						<i class="bi bi-list mobile-nav-toggle" @click.stop="toggleState=true"></i>
 					</nav>
 				</div>
 			</header>
 		
-		<div class="pluscont liqubox">
+		<div class="liqubox">
 			<section class="position-relative py30" data-aos="fade-up" data-aos-delay="100">
 				<div class="container">
 					<div class="hidden-sm hidden-md hidden-xs d-flex flex-jsb align-items-center mb20 fwb">
 						<div class="topnumber">
 							<p>JAM Price:${{advertisePrice}}</p>
-							<p class="mt6"><span class="linkspan">Buy JAM</span> or <span class="linkspan">Add Liquidity</span></p>
+							<p class="mt10"><a class="linkspan" href="https://exchange.pancakeswap.finance/#/swap" target="_blank">Buy JAM</a> or <a class="linkspan" target="_blank" href="https://exchange.pancakeswap.finance/#/add/BNB/0xf30925b40C9AEAba7bEbe89549336E49F3A4d360">Add Liquidity</a></p>
 						</div>
 						<div class="">
 							<p class="tvlNumber">TVL {{tvlNum}}</p>
@@ -89,30 +121,30 @@
 										<img src="img/w-3.png" class="coinpicture">
 										<div>
 											<p class="fwb liquname">{{item.name}}</p>
-											<p class="color-sgrey mt2 liqulabel">Users: JamboSwap</p>
+											<p class="color-sgrey mt5 liqulabel">Users: JamboSwap</p>
 										</div>
 									</div>
 									<div class="text-center liquapy">
 										<p class="fwb liquname">{{item.apy}}%</p>
-										<p class="color-sgrey mt2 liqulabel">APY</p>
+										<p class="color-sgrey mt5 liqulabel">APY</p>
 									</div>
 								</div>
 								<div class="liquright">
 									<div class="flex1 text-center linebox">
 										<p class="fwb liquname">{{item.tokenBalanceNum}}</p>
-										<p class="color-sgrey mt2 liqulabel">Balance</p>
+										<p class="color-sgrey mt5 liqulabel">Balance</p>
 									</div>
 									<div class="flex1 text-center linebox">
 										<p class="fwb liquname">{{item.tokenBalanceAmount}}</p>
-										<p class="color-sgrey mt2 liqulabel">Deposited</p>
+										<p class="color-sgrey mt5 liqulabel">Deposited</p>
 									</div>
 									<div class="flex1 text-center linebox">
 										<p class="fwb liquname">1X</p>
-										<p class="color-sgrey mt2 liqulabel">Multiplier</p>
+										<p class="color-sgrey mt5 liqulabel">Multiplier</p>
 									</div>
 									<div class="flex1 text-center">
 										<p class="fwb liquname">${{item.tvlAmount}}</p>
-										<p class="color-sgrey mt2 liqulabel">TVL</p>
+										<p class="color-sgrey mt5 liqulabel">TVL</p>
 									</div>
 								</div>
 							</div>
@@ -124,47 +156,53 @@
 											<input type="number" v-model="depositAmount" placeholder="Enter the number" />
 											<span class="fwb maxnumber" @click="depositMax(index)">MAX</span>
 										</div>
-										<div class="d-flex align-items-center flex-jsb mt16">
+										<div class="d-flex align-items-center flex-jsb approvitem">
 											<!-- sgray -->
-											<button type="button" class="createBtn bg-theme color-white fwb" :id=setId(index) @click="approve(index)">APPROVE</button>
-											<button type="button" class="createBtn bg-theme color-white fwb" @click="add(index)">ADD</button>
+											<button type="button" class="createBtn bg-theme color-white fwb liqudbtn" :id=setId(index) :class="item.isapprove||item.tokenBalanceNum==0?'sgray':'bg-theme'" @click="approve(index)">APPROVE</button>
+											<button type="button" class="createBtn bg-theme color-white fwb liqudbtn addbtn" :disabled="!item.isapprove"  :class="item.isapprove?'bg-theme':'sgray'" @click="add(index)">ADD</button>
 										</div>
 									</div>
 									<div class="flex1 formitem">
-										<p class="color-sgrey liqulabel">Balance: {{item.depositBalanceNum}} {{item.name}}</p>
+										<p class="color-sgrey liqulabel">Deposited: {{item.depositBalanceNum}} {{item.name}}</p>
 										<div class="position-relative formbox mt10">
 											<input type="number" v-model="withdrawAmount" placeholder="Enter the number" />
 											<span class="fwb maxnumber" @click="withdrawMax(index)">MAX</span>
 										</div>
-										<div class="mt16">
-											<button type="button" class="createBtn bg-theme color-white fwb withbtn" @click="withdraw(index)">WITHDRAW</button>
+										<div class="approvitem">
+											<button type="button" class="createBtn color-white fwb withbtn" :disabled="item.depositBalanceNum==0"  :class="item.depositBalanceNum!=0?'bg-theme':'sgray'" @click="withdraw(index)">WITHDRAW</button>
 										</div>
 									</div>
 									<div class="formharvest">
 										<p class="color-sgrey liqulabel">JAM Rewards</p>
 										<p class="mt10 liquname">{{item.rewardNum}}</p>
 										<p class="mt6 liquname">${{item.rewardAmount}}</p>
-										<div class="mt16">
-											<button type="button" class="createBtn bg-theme color-white fwb withbtn" @click="harvest(index)">HARVEST</button>
+										<div class="havest">
+											<button type="button" class="createBtn color-white fwb withbtn" :disabled="item.depositBalanceNum==0"  :class="item.depositBalanceNum!=0?'bg-theme':'sgray'" @click="harvest(index)">HARVEST</button>
 										</div>
 									</div>
 								</div>
 								<div class="formbtm">
-									<div class="formitembtm formjsb">
-										<p class="color-sgrey liqulabel">JAM Price：</p>
-										<p class="liqulabel">${{advertisePrice}}</p>
+									<div class="formbtm1">
+										<div class="formitembtm formjsb">
+											<p class="color-sgrey liqulabel">JAM Price:</p>
+											<p class="liqulabel">${{advertisePrice}}</p>
+										</div>
+										<div class="formitembtm formjsb">
+											<p class="color-sgrey liqulabel">Total liquidity:</p>
+											<p class="liqulabel liqulabel1">{{item.tvlNum}}</p>
+										</div>
 									</div>
-									<div class="formitembtm formjsb">
-										<p class="color-sgrey liqulabel">Total liquidity：</p>
-										<p class="liqulabel">{{item.tvlNum}}</p>
-									</div>
-									<div class="formitembtm formjsb">
-										<p class="color-sgrey liqulabel">LP price：</p>
-										<p class="liqulabel">${{item.lpPrice}}</p>
-									</div>
-									<div class="formitembtm ">
-										<p class="color-theme liqulabel">View BSC Contract</p>
-										<img src="img/tra.png" class="traimg">
+									<div class="formbtm1">
+										<div class="formitembtm formjsb">
+											<p class="color-sgrey liqulabel">LP price:</p>
+											<p class="liqulabel">${{item.lpPrice}}</p>
+										</div>
+										<div class="formitembtm trabox">
+											<p class="color-theme liqulabel">
+												<a class="linkspan" :href="'https://bscscan.com/address/'+item.address" target="_blank">View BSC Contract</a>
+											</p>
+											<img src="img/tra.png" class="traimg">
+										</div>
 									</div>
 								</div>
 							</div>
@@ -191,6 +229,21 @@
 					</div>
 				</div>
 			</div>
+			<!-- 链接钱包的弹窗 -->
+			<div class="shadowbox" v-show="phoneshow">
+				<div class="walletshadow py20 f14 fwb text-center px20">
+					<div class="color-defalut">COLLECT WALLET</div>
+					<div class="walletdivide color-defalut mt20" @click.stop="pcLink">
+						BSC
+					</div>
+					<div class="walletdivide othervide mt10">
+						HECO(on the way)
+					</div>
+					<div class="walletdivide othervide mt10">
+						Plokadot(on the way)
+					</div>
+				</div>
+			</div>
 			<!-- 创建广告先授权后上传文件 -->
 			<div class="createBox hidden">
 				<div class="nopowerbox pt15">
@@ -203,35 +256,36 @@
 						</div>
 						<div class="d-flex flex-jsb align-items-center mt6">
 							<span class="color-gray f14">JAM:</span>
-							<span class="fwb color333 f16">2084990</span>
+							<span class="fwb color333 f16">0</span>
 						</div>
 					</div>
 					<button class="confirmbtn sureApproval">COMFIRM</button>
 				</div>
 			</div>
-		</div>
-		<footer id="footer">
-			<div class="container">
-				<div class="footerbox">
-					<div class="footitem">
-						<img src="img/h1.png" class="footimg">
-						<span class="hidden-xs">Telegram</span>
+			<footer id="footer" class="hidden-sm hidden-xs" data-aos="fade-up" data-aos-delay="200">
+				<div class="container">
+					<div class="footerbox">
+						<a class="footitem" href="https://t.me/JamboNetwork" target="_blank">
+							<img src="img/h1.png" class="footimg">
+							<span class="hidden-xs">Telegram</span>
+						</a>
+						<a class="footitem" href="https://medium.com/@jambonetofficial" target="_blank">
+							<img src="img/h2.png" class="footimg">
+							<span class="hidden-xs">Medium</span>
+						</a>
+						<a class="footitem" href="https://github.com/JAMBO-NETWORK" target="_blank">
+							<img src="img/h3.png" class="footimg">
+							<span class="hidden-xs">Github</span>
+						</a>
+						<a class="footitem" href="wiki.html" target="_blank">
+							<img src="img/h4.png" class="footimg">
+							<span class="hidden-xs">Wiki</span>
+						</a>
 					</div>
-					<div class="footitem">
-						<img src="img/h2.png" class="footimg">
-						<span class="hidden-xs">Medium</span>
-					</div>
-					<div class="footitem">
-						<img src="img/h3.png" class="footimg">
-						<span class="hidden-xs">Github</span>
-					</div>
-					<a class="footitem" href="wiki.html">
-						<img src="img/h4.png" class="footimg">
-						<span class="hidden-xs">Wiki</span>
-					</a>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
+	
 		</div>
 		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/aos.js" type="text/javascript" charset="utf-8"></script>
@@ -248,6 +302,8 @@
 		<script src="js/contracts/address.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/contracts/mining_abi.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/contracts/token_abi.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/md5Sign.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			var web3Provider;
 			var web3;
@@ -256,9 +312,11 @@
 				el: '#app',
 				data: {
 					toggleState:false,
+					phoneshow:false,
 					walletaddress:'',
 					depositAmount:'',
 					withdrawAmount:'',
+					imgstate:false,
 					advertisePrice:0.000000,
 					tvlNum:0.00,
 					tvlAmount:0.00,
@@ -266,35 +324,46 @@
 					coinIndex:0,//默认为第一个币种
 					// TODO，上线记得修改，id要对应数据库中的lpId
 					listInit:[
-						{id:0,name:'USDT',address:'0x91756aa35eD745C4CE58C906a66005b19509F834'
+						{id:0,name:'BUSD',address:'0xe9e7cea3dedca5984780bafc599bd69add087d56'
 							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
-							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'0'},
-						{id:1,name:'JAM-BUSD',address:'0x91756aa35eD745C4CE58C906a66005b19509F834'
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'0',isapprove:false},
+						{id:1,name:'JAM',address:'0xf30925b40C9AEAba7bEbe89549336E49F3A4d360'
 							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
-							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'1'},
-						{id:2,name:'JAM-BNB',address:'0x91756aa35eD745C4CE58C906a66005b19509F834'
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'0',isapprove:false},
+						{id:2,name:'JAM-BUSD',address:'0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d'
 							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
-							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'1'}
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'1',isapprove:false},
+						{id:3,name:'JAM-BNB',address:'0x0b04907459912996636C22e671Acc38a04bC1Cbc'
+							,apy:'0',tokenBalanceNum:'0',tokenBalanceAmount:'0',tvlNum:'0',tvlAmount:'0',lpPrice:'0'
+							,depositBalanceNum:'0',rewardNum:'0',rewardAmount:'0',isLp:'1',isapprove:false}
 					],
 				},
 				async created() {
 					// this.walletaddress = localStorage.getItem('JamAddress')
-					await this.linkWallet();
-					await this.getDefaultAccount();
-					await this.listLiqInfo(); // 流动池信息
+					this.linkWallet();
 					this.listenEthereum();
-					this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
 					
 					setInterval(async () => {
 						this.listLiqInfo(); // 流动池信息
-					}, 30061);
+					}, 7000);
 					setInterval(async () => {
 						this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
 					}, 6000);
 				},
 				methods: {
 					toggleMenu(){
-						this.toggleState = !this.toggleState
+						if(this.isMobile()){
+							this.toggleState = !this.toggleState
+						}
+					},
+					isMobile() {
+						let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+						return flag;
+					},
+					showmobilemask(){
+						if(this.isMobile()){
+							this.phoneshow =!this.phoneshow
+						}
 					},
 					async linkWallet() {
 						if (ethereum) {
@@ -303,7 +372,7 @@
 							try {
 								ethereum.enable();
 							} catch (error) {
-								parent.layer.msg("用户取消授权");
+								parent.layer.msg("User cancel authorization");
 								return;
 							}
 						} else if (web3) {
@@ -316,16 +385,27 @@
 							console.log("https://http-testnet.hecochain.com");
 						}
 						web3 = new Web3(web3Provider);
-						web3.eth.net.getId((err, netId) => {
+						await web3.eth.net.getId((err, netId) => {
 							console.log("netId: ", netId);
+							curChainId = netId
 						});
+						if (curChainId != chainId) {
+							parent.layer.msg(testText)
+							return
+						}
 						miningInstance = await new web3.eth.Contract(miningAbi, miningAddr);
 						jamInstance = await new web3.eth.Contract(tokenAbi, jamAddr);
 						
-						
+						this.getDefaultAccount();
+						this.listLiqInfo(); // 流动池信息
+						this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
 					},
 					pcLink(){
 						let that = this
+						if(that.phoneshow&&that.isMobile()){
+							that.phoneshow = false
+							that.toggleState = false
+						}
 						layer.open({
 							type: 1,
 							title: false,
@@ -385,7 +465,7 @@
 							    dataType: "json",
 							    success: function (data) {
 							        if (data.code == "00000") {
-										that.padding(id, data.data);
+										that.padding(i, data.data);
 							        } else {
 							            console.log("出现错误: ", data.message);
 							        }
@@ -397,6 +477,8 @@
 						}
 					},
 					async padding(i, liqInfo) {
+						let map = this.listInit[i]
+						let lpId = map["id"];
 						let lpAddress = liqInfo.lpAddress;
 						this.listInit[i]["apy"] = liqInfo.apy
 						this.listInit[i]["tvlNum"] = liqInfo.totalLiquidity
@@ -409,14 +491,15 @@
 							let tokenBalanceNum = await lpInstance.methods.balanceOf(defaultAccount).call()
 							tokenBalanceNum = tokenBalanceNum / base18
 							this.listInit[i]["tokenBalanceNum"] = tokenBalanceNum
-							tokenBalanceAmount = Number(tokenBalanceNum * liqInfo.lpPrice).toFixed(2)
-							this.listInit[i]["tokenBalanceAmount"] = tokenBalanceAmount
+							// tokenBalanceAmount = Number(tokenBalanceNum * liqInfo.lpPrice).toFixed(2)
+							// this.listInit[i]["tokenBalanceAmount"] = tokenBalanceAmount
 							// 获取用户可以提取的余额
-							var userInfo = await miningInstance.methods.userInfo(i, defaultAccount).call();
+							var userInfo = await miningInstance.methods.userInfo(lpId, defaultAccount).call();
 							var depositBalanceNum = web3.utils.fromWei(userInfo["amount"], 'ether');
+							this.listInit[i]["tokenBalanceAmount"] = depositBalanceNum
 							this.listInit[i]["depositBalanceNum"] = depositBalanceNum
 							// 用户的奖励
-							let earningsObj = await miningInstance.methods.pending(i, defaultAccount).call();
+							let earningsObj = await miningInstance.methods.pending(lpId, defaultAccount).call();
 							var rewardNum = web3.utils.fromWei(earningsObj, 'ether');
 							this.listInit[i]["rewardNum"] = Number(rewardNum).toFixed(4)
 							this.listInit[i]["rewardAmount"] = Number(rewardNum * this.advertisePrice).toFixed(4)
@@ -467,32 +550,50 @@
 					setId(cn) {
 						return "lpApprove" + cn
 					},
-					async changeLiqu(ind){
-						this.coinIndex = ind
-						this.coinList[ind].state = !this.coinList[ind].state
+					async changeLiqu(index){
+						this.coinIndex = index
+						this.coinList[index].state = !this.coinList[index].state
 						this.depositAmount = 0
 						this.withdrawAmount = 0
 						
 						// 查询是否已授权
-						let map = this.listInit[ind]
+						let map = this.listInit[index]
 						let lpAddress = map["address"];
 						let lpInstance = await new web3.eth.Contract(tokenAbi, lpAddress);
 						var allowance = await lpInstance.methods.allowance(defaultAccount, miningAddr).call();
 						if (allowance > 0) { // 已授权
-							$("#lpApprove"+ind).removeClass("bg-theme")
+							// $("#lpApprove"+index).removeClass("bg-theme")
 						}
 						
 					},
+					// 授权
 					async approve(index) {
+						if(this.listInit[index].tokenBalanceNum==0){
+							return
+						}
+						let input = this.depositAmount;
+						console.log("input: ", input)
+						if (input <= 0) {
+							parent.layer.msg("Please enter a value greater than 0")
+							return
+						}
+						var that = this
 						let map = this.listInit[index]
 						let lpAddress = map["address"];
 						let lpInstance = await new web3.eth.Contract(tokenAbi, lpAddress);
+						let layopenss;
 						lpInstance.methods.approve(miningAddr, MAX_INT).send({
 							from: defaultAccount,
 							gas: 500000
+						}).on('transactionHash', function(hash){
+							that.imgstate = true
+							layopenss = parent.layer.load(2, {time: 50*1000})
 						}).then(function(res){
 							console.log("授权成功")
-							$("#lpApprove"+index).removeClass("bg-theme")
+							that.listInit[index].isapprove = true
+							that.imgstate = false
+							parent.layer.close(layopenss)
+							// $("#lpApprove"+index).removeClass("bg-theme").addClass('.sgray')
 						})
 					},
 					// 质押
@@ -513,13 +614,19 @@
 						let lpId = map["id"];
 						let value = web3.utils.toWei(input, 'ether')
 						console.log("value: ", value)
+						let layopenss;
 						miningInstance.methods.deposit(lpId, value).send({
 							from: defaultAccount,
 							gas: 2000000
+						}).on('transactionHash', function(hash){
+							console.log("确认...")
+							that.imgstate = true
+							layopenss = parent.layer.load(2, {time: 50*1000})
 						}).then(function(res){
 							console.log("质押成功")
-							// 更新流动池信息
-							that.updateLiquidityInfoBack(lpId);
+							that.listInit[index].isapprove = false
+							that.imgstate = true
+							parent.layer.close(layopenss)
 						})
 					},
 					// 提现
@@ -541,13 +648,17 @@
 						let lpId = map["id"];
 						let value = web3.utils.toWei(input, 'ether')
 						console.log("value: ", value)
+						let layopenss;
 						miningInstance.methods.withdraw(lpId, value).send({
 							from: defaultAccount,
 							gas: 2000000
+						}).on('transactionHash', function(hash){
+							that.imgstate = true
+							layopenss = parent.layer.load(2, {time: 50*1000})
 						}).then(function(res){
 							console.log("提现成功")
-							// 更新流动池信息
-							that.updateLiquidityInfoBack(lpId);
+							that.imgstate = false
+							parent.layer.close(layopenss)
 						})
 					},
 					// 提取奖励
@@ -560,27 +671,36 @@
 							return
 						}
 						console.log("rewardNum: ", rewardNum)
+						let layopenss;
 						miningInstance.methods.withdraw(lpId, 0).send({
 							from: defaultAccount,
 							gas: 2000000
+						}).on('transactionHash', function(hash){
+							that.imgstate = true
+							layopenss = parent.layer.load(2, {time: 50*1000})
 						}).then(function(res){
 							console.log("提取奖励成功")
-							// 更新前端流动池信息
-							that.updateLiquidityInfoFront(lpId);
+							that.imgstate = false
+							parent.layer.close(layopenss)
 						})
 						
 					},
 					// 更新后端流动池信息
-					updateLiquidityInfoBack(lpId) {
+					async updateLiquidityInfoBack(index) {
+						let map = listLiq[index];
+						let lpId = map["id"];
 						var that = this;
-						data = {"chainType" : chainType, "lpId" : lpId}
+						data1 = {"chainType" : chainType, "lpId" : lpId}
+						let data = dealParams(data1)
 						axios.post(url + "/v1/updateLiquidityInfo", data).then(res => {
-							that.updateLiquidityInfoFront(lpId);
+							that.updateLiquidityInfoFront(index);
 							that.getTvlAndJamPrice()
 						})
 					},
 					// 更新前端流动池信息
-					updateLiquidityInfoFront(lpId) {
+					updateLiquidityInfoFront(index) {
+						let map = listLiq[index];
+						let lpId = map["id"];
 						var that = this;
 						$.ajax({
 						    type: "GET",
@@ -588,7 +708,7 @@
 						    dataType: "json",
 						    success: function (data) {
 						        if (data.code == "00000") {
-									that.padding(lpId, data.data);
+									that.padding(index, data.data);
 						        } else {
 						            console.log("出现错误: ", data.message);
 						        }

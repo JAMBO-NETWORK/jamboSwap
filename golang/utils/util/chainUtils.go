@@ -77,6 +77,7 @@ func GetLpPrice(chainType string, client *ethclient.Client, routerInstance *rout
 			return big.NewFloat(0), err
 		}
 		logs.Info("lpToken=", lpToken, "中的token1Amount=", token1Amount)
+		// LP中的每个代币的价值是相等的
 		return decimalUtils.Mul(token1Amount, big.NewFloat(2)), nil
 	}
 }

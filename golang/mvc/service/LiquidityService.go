@@ -1,7 +1,6 @@
 package service
 
 import (
-	"github.com/astaxie/beego/logs"
 	"jamSwap/mvc/bo"
 	"jamSwap/mvc/dao"
 	"strconv"
@@ -44,7 +43,6 @@ func (service *LiquidityService) LiquidityList(chainType string) (bo.ResponseBo,
 func (service *LiquidityService) LiquidityInfo(chainType string, lpId int) (bo.ResponseBo, error) {
 	var dao dao.LiquidityDao
 	liq := dao.LiquidityInfo(chainType, lpId)
-	logs.Info("liq: ", liq)
 	var response bo.ResponseBo
 	if liq.Id > 0 {
 		response.Code = "00000"

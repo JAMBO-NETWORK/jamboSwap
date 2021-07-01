@@ -11,7 +11,9 @@ import (
 	"jamSwap/mvc/bo"
 	"jamSwap/mvc/dao"
 	"jamSwap/mvc/po"
+	"jamSwap/utils/util"
 	"math/big"
+	"strings"
 )
 
 var base18 int64 = 1000000000000000000
@@ -21,6 +23,17 @@ type UserService struct {
 
 func (service *UserService) SaveAdvertisement(userBo bo.UserAdvertisementBo) (bo.ResponseBo, error) {
 	var response bo.ResponseBo
+	// 验证签名
+	paramMap := make(map[string]interface{})
+	paramMap["userAddr"] = userBo.UserAddr
+	paramMap["imgUrl"] = userBo.ImgUrl
+	paramMap["chainType"] = userBo.ChainType
+	if ok, err := util.VerifySign(paramMap, userBo.Sign, "&"); !ok {
+		response.Code = "00004"
+		response.Message = "签名错误"
+		return response, err
+	}
+
 	response.Code = "00001"
 	// 查询用户的链上信息，余额是否大于mortgageAmount
 	mortgageAmount, _ := beego.AppConfig.Int("home::mortgageAmount")
@@ -45,6 +58,13 @@ func (service *UserService) SaveAdvertisement(userBo bo.UserAdvertisementBo) (bo
 	var userPo po.UserAdvertisement
 	dataByte, _ := json.Marshal(userBo)
 	json.Unmarshal(dataByte, &userPo)
+	maxSortNum := dao.MaxSortNum()
+	if maxSortNum == 0 {
+		maxSortNum = 2
+	} else {
+		maxSortNum++
+	}
+	userPo.SortNum = maxSortNum
 	user := dao.QueryAdvertisement(userBo.UserAddr, userBo.ChainType)
 	if user.Id > 0 {
 		if user.IsDelete == 0 {
@@ -91,29 +111,136 @@ func (service *UserService) HasAdvertisement(userAddr, chainType string) (bo.Res
 }
 
 // 获取广告列表
-func (service *UserService) List(chainType string, pageNo, pageSize int) (bo.ResponseBo, error) {
+func (service *UserService) List(userAddr, chainType string, pageNo, pageSize int) (bo.ResponseBo, error) {
 	var response bo.ResponseBo
 	response.Code = "00000"
 	response.Message = "success"
 	var dao dao.UserDao
-	totalCount := dao.TotalCount()
+	totalCount := 0
 	start := (pageNo - 1) * pageSize
-	list := dao.List(chainType, start, pageSize)
-	page := bo.PageUtil(totalCount, pageNo, pageSize, list)
+	admin := beego.AppConfig.String("admin")
+	var list *[]po.UserAdvertisement
+	isOwner := 0
+	if strings.EqualFold(admin, userAddr) {
+		// 管理员地址，需要查询被隐藏的
+		isOwner = 1
+		totalCount = dao.TotalCount2(chainType)
+		list = dao.List2(chainType, start, pageSize)
+	} else {
+		totalCount = dao.TotalCount(chainType)
+		list = dao.List(chainType, start, pageSize)
+	}
+	page := bo.PageUtil(totalCount, pageNo, pageSize, list, isOwner)
 	response.Data = page
 	return response, nil
+}
 
+func (service *UserService) AddressList(chainType string) ([]string, error) {
+	var dao dao.UserDao
+	list := dao.AddressList(chainType)
+	addressList := make([]string, len(list), len(list))
+	for _, v := range list {
+		addressList = append(addressList, v.UserAddr)
+	}
+	return addressList, nil
 }
 
 // 移除用户的广告信息
 func (service *UserService) RemoveAdvertisement(removeBo bo.RemoveAdvertisementBo) (bo.ResponseBo, error) {
 	var response bo.ResponseBo
+	// 验证签名
+	paramMap := make(map[string]interface{})
+	paramMap["userAddr"] = removeBo.UserAddr
+	paramMap["chainType"] = removeBo.ChainType
+	paramMap["isDelete"] = removeBo.IsDelete
+	if ok, err := util.VerifySign(paramMap, removeBo.Sign, "&"); !ok {
+		response.Code = "00004"
+		response.Message = "签名错误"
+		return response, err
+	}
+
 	response.Code = "00001"
 	response.Message = "fail"
 	var dao dao.UserDao
 	_, err := dao.UpdateAdvertisement(removeBo.UserAddr, removeBo.ChainType, removeBo.IsDelete)
 	if err != nil {
 		log.Error("UpdateAdvertisement is error: ", err)
+	} else {
+		response.Code = "00000"
+		response.Message = "success"
+	}
+	return response, nil
+}
+
+// 隐藏广告
+func (service *UserService) HideAdvertisement(hideBo bo.OprAdvertisementBo) (bo.ResponseBo, error) {
+	var response bo.ResponseBo
+	// 验证签名
+	paramMap := make(map[string]interface{})
+	paramMap["id"] = hideBo.Id
+	if ok, err := util.VerifySign(paramMap, hideBo.Sign, "&"); !ok {
+		response.Code = "00004"
+		response.Message = "签名错误"
+		return response, err
+	}
+
+	response.Code = "00001"
+	response.Message = "fail"
+	var dao dao.UserDao
+	_, err := dao.HideAdvertisement(hideBo.Id)
+	if err != nil {
+		log.Error("HideAdvertisement is error: ", err)
+	} else {
+		response.Code = "00000"
+		response.Message = "success"
+	}
+	return response, nil
+}
+
+// 开放广告
+func (service *UserService) OpenAdvertisement(openBo bo.OprAdvertisementBo) (bo.ResponseBo, error) {
+	var response bo.ResponseBo
+	// 验证签名
+	paramMap := make(map[string]interface{})
+	paramMap["id"] = openBo.Id
+	if ok, err := util.VerifySign(paramMap, openBo.Sign, "&"); !ok {
+		response.Code = "00004"
+		response.Message = "签名错误"
+		return response, err
+	}
+
+	response.Code = "00001"
+	response.Message = "fail"
+	var dao dao.UserDao
+	_, err := dao.OpenAdvertisement(openBo.Id)
+	if err != nil {
+		log.Error("OpenAdvertisement is error: ", err)
+	} else {
+		response.Code = "00000"
+		response.Message = "success"
+	}
+	return response, nil
+}
+
+// 修改广告的排序序号
+func (service *UserService) UpdateSortNum(sortBo bo.UpdateSortNumBo) (bo.ResponseBo, error) {
+	var response bo.ResponseBo
+	// 验证签名
+	paramMap := make(map[string]interface{})
+	paramMap["id"] = sortBo.Id
+	paramMap["sortNum"] = sortBo.SortNum
+	if ok, err := util.VerifySign(paramMap, sortBo.Sign, "&"); !ok {
+		response.Code = "00004"
+		response.Message = "签名错误"
+		return response, err
+	}
+
+	response.Code = "00001"
+	response.Message = "fail"
+	var dao dao.UserDao
+	_, err := dao.UpdateSortNum(sortBo.Id, sortBo.SortNum)
+	if err != nil {
+		log.Error("UpdateSortNum is error: ", err)
 	} else {
 		response.Code = "00000"
 		response.Message = "success"

@@ -112,6 +112,8 @@ func (user *UserController) HasAdvertisement() {
 }
 
 // 获取广告列表
+// @param userAddr 用户地址，如果是管理员地址要做特殊处理
+// @param chainType 链类型
 // @param pageNo 第几页，从1开始
 // @param pageSize 页大小，默认为8
 // @return 广告列表
@@ -121,6 +123,7 @@ func (user *UserController) List() {
 	response.Code = "00001"
 	response.Message = "fail"
 
+	userAddr := user.GetString("userAddr")
 	chainType := user.GetString("chainType")
 	pageNo, _ := user.GetInt("pageNo")
 	pageSize, _ := user.GetInt("pageSize")
@@ -130,11 +133,32 @@ func (user *UserController) List() {
 
 	// 获取广告列表
 	var service service.UserService
-	response, err := service.List(chainType, pageNo, pageSize)
+	response, err := service.List(userAddr, chainType, pageNo, pageSize)
 	if err != nil {
 		logs.Error("service.List() is err: ", err)
 	}
 	user.Data["json"] = response
+	user.ServeJSON()
+}
+
+// 获取所有地址
+// @param chainType 链类型
+// @return 地址列表
+func (user *UserController) AddressList() {
+	user.Ctx.ResponseWriter.Header().Set("Access-Control-Allow-Origin", user.Ctx.Request.Header.Get("Origin"))
+	var response bo.ResponseBo
+	response.Code = "00001"
+	response.Message = "fail"
+
+	chainType := user.GetString("chainType")
+
+	// 获取广告列表
+	var service service.UserService
+	addressList, err := service.AddressList(chainType)
+	if err != nil {
+		logs.Error("service.AddressList() is err: ", err)
+	}
+	user.Data["json"] = addressList
 	user.ServeJSON()
 }
 
@@ -167,6 +191,94 @@ func (user *UserController) RemoveAdvertisement() {
 	response, err = service.RemoveAdvertisement(removeBo)
 	if err != nil {
 		logs.Error("service.RemoveAdvertisement(removeBo) is err: ", err)
+	}
+	user.Data["json"] = response
+	user.ServeJSON()
+}
+
+// 隐藏广告
+// @param id 广告地址
+// @return 00000成功，其它失败
+func (user *UserController) HideAdvertisement() {
+	user.Ctx.ResponseWriter.Header().Set("Access-Control-Allow-Origin", user.Ctx.Request.Header.Get("Origin"))
+	var response bo.ResponseBo
+	response.Code = "00001"
+	response.Message = "fail"
+
+	// 请求参数
+	data := user.Ctx.Input.RequestBody
+	var hideBo bo.OprAdvertisementBo
+	err := json.Unmarshal(data, &hideBo)
+	if err != nil {
+		logs.Error("json.Unmarshal(data, &hideBo) is err: ", err)
+		return
+	}
+	logs.Info("HideAdvertisement请求参数：", hideBo)
+
+	// 隐藏广告
+	var service service.UserService
+	response, err = service.HideAdvertisement(hideBo)
+	if err != nil {
+		logs.Error("service.HideAdvertisement(hideBo) is err: ", err)
+	}
+	user.Data["json"] = response
+	user.ServeJSON()
+}
+
+// 开放广告
+// @param id 广告地址
+// @return 00000成功，其它失败
+func (user *UserController) OpenAdvertisement() {
+	user.Ctx.ResponseWriter.Header().Set("Access-Control-Allow-Origin", user.Ctx.Request.Header.Get("Origin"))
+	var response bo.ResponseBo
+	response.Code = "00001"
+	response.Message = "fail"
+
+	// 请求参数
+	data := user.Ctx.Input.RequestBody
+	var openBo bo.OprAdvertisementBo
+	err := json.Unmarshal(data, &openBo)
+	if err != nil {
+		logs.Error("json.Unmarshal(data, &openBo) is err: ", err)
+		return
+	}
+	logs.Info("OpenAdvertisement请求参数：", openBo)
+
+	// 隐藏广告
+	var service service.UserService
+	response, err = service.OpenAdvertisement(openBo)
+	if err != nil {
+		logs.Error("service.OpenAdvertisement(openBo) is err: ", err)
+	}
+	user.Data["json"] = response
+	user.ServeJSON()
+}
+
+// 修改广告的排序序号
+// @param id 广告地址
+// @param sortNum
+// @return 00000成功，其它失败
+func (user *UserController) UpdateSortNum() {
+	user.Ctx.ResponseWriter.Header().Set("Access-Control-Allow-Origin", user.Ctx.Request.Header.Get("Origin"))
+	var response bo.ResponseBo
+	response.Code = "00001"
+	response.Message = "fail"
+
+	// 请求参数
+	data := user.Ctx.Input.RequestBody
+	var sortBo bo.UpdateSortNumBo
+	err := json.Unmarshal(data, &sortBo)
+	if err != nil {
+		logs.Error("json.Unmarshal(data, &sortBo) is err: ", err)
+		return
+	}
+	logs.Info("UpdateSortNum请求参数：", sortBo)
+
+	// 修改广告的排序序号
+	var service service.UserService
+	response, err = service.UpdateSortNum(sortBo)
+	if err != nil {
+		logs.Error("service.UpdateSortNum(sortBo) is err: ", err)
 	}
 	user.Data["json"] = response
 	user.ServeJSON()

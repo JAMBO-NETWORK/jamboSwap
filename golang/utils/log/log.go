@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
-	"time"
 )
 
 func Init() {
@@ -19,8 +18,8 @@ func Init() {
 	jsonConfig := make(map[string]interface{})
 
 	// fmt.Println("aa:",time.Now().Format("2006-01-02 15:04:05"))
-	date := "log_" + time.Now().Format("2006-01-02")
-	fileName := date + ".log"
+	// date := "log_" + time.Now().Format("2006-01-02")
+	fileName := "log.log"
 	jsonConfig["filename"] = logPath + fileName
 	jsonConfig["maxlines"] = maxLines
 	jsonConfig["maxsize"] = maxSize

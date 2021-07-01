@@ -6,8 +6,8 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<meta content="did" name="description">
 		<meta content="did" name="keywords">
-		<link href="img/logo.png" rel="icon">
-		<link href="img/logo.png" rel="apple-touch-icon">
+		<link href="img/favicon.ico" rel="icon">
+		<link href="img/favicon.ico" rel="apple-touch-icon">
 		<link rel="stylesheet" type="text/css" href="css/aos.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -16,23 +16,124 @@
 	</head>
 	<body>
 		<!--  app容器 -->
-		<div>
-		<header id="header" class="fixed-top">
-			<div class="container d-flex flex-jsb align-items-center userheaders" >
-				<h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="img/logo.png" alt=""
-							class="img-fluid"></h1>
-				<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''">
-					<ul>
-						<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/logo.png"></li>
-						<li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-						<li><a class="nav-link scrollto" href="liquid.html">Liquidity</a></li>
-						<!--  <i class="bi bi-chevron-down"></i> -->
-					</ul>
-					<i class="bi bi-list mobile-nav-toggle" @click="toggleMenu"></i>
-				</nav>
+		<div  id="app" v-cloak >
+		<header id="header" class="fixed-top hidden-md hidden-lg hidden-sm">
+			<div class="container d-flex  align-items-center userheaders" >
+				<h1 class="logo me-auto"><a href="index.html" class="logo me-auto">
+					<img src="img/logo.png" alt=""class="img-fluid hidden-xs">
+					<img src="./img/logophone.png" alt="" class="img-fluid hidden-lg hidden-md hidden-sm logophone"></a>
+				</h1>
+				<span class="fwb f18 hidden-lg hidden-md hidden-sm color-defalut phonetit wikiTitle">WIKI</span>
 			</div>
 		</header>
-		<div class="">
+		
+		<div class="d-flex hidden-xs">
+			<!-- <div class="leftwiki">
+				<img src="img/logo.png" class="leftlogo">
+				<div class="quesbox">
+					<div v-for="(qitem,qindex) in QuesArr" :key="qindex" @click="outerques(qindex,qitem)">
+						<div class="quesitem flex-jsb fwb" :class="qindex==QuesIndex?'quesboxactive':'color-defalut'">
+							<span>{{qitem.name}}</span>
+							<img :src="'img/r'+(qindex==QuesIndex?'i':'i1')+'.png'" >
+						</div>
+						<div class="" v-show="qitem.openState">
+							<div v-for="(citem,cindex) in qitem.childQues" :key="cindex" @click.stop="inderques(cindex)">
+								<div class="quesitem flex-jcc text-center childqure" :class="childIndex==cindex?'childactive':'color-defalut'">
+									<div class="quesspan">{{citem}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="rightwiki">
+				<div class="container">
+					<div class="rightbox position-relative">
+						<img src="img/logo.png" class="img-fluid wikilogo">
+						<div class="wikitopbox text-center color-defalut fwb">Jambo Network Dapp FAQ</div>
+						<div class="quescont">
+							<!-- question header -->
+							<div class="questionheader fwb ">Introduction to Jambo Network</div>
+							<div>
+								<div class="d-flex align-items-center">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">What is Jambo Network?</span>
+								</div>
+								<div class="answer">
+									As the first blockchain ad-tech support platform, Jambo has been committed to creating a transparent and credible decentralized 
+									advertising industry value ecology. With the Polkadot heterogeneous multi-chain architecture, the platform can realize the value 
+									interoperability of different advertising industry chains, make the database transparent, greatly improve the service development of the 
+									blockchain advertising industry, and accelerate the serving efficiency of digital advertising.
+								</div>
+								<div class="d-flex align-items-center question2">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">What are the potentials of Jambo within Dapp market?</span>
+								</div>
+								<div class="answer">
+									Currently, Dapp such as wallets, games, social networking, and finance are not involved in non-advertising display business, 
+									which will become one of Jambo's strategic ecological expansion. 
+									Through the Jambo cross-chain slot, both advertisers and channel parties can choose a suitable form of advertising through the Jambo advertising protocol to publish with one click. The audience, the coverage area, the playback period, the number of playbacks, etc. are all recorded on the chain,
+									 creating a rich The new ecology of advertising media on the chain leads the development of the blockchain advertising industry.
+								</div>
+							</div>
+							<div class="questionheader fwb questionmargin">Tokenomics</div>
+							<div>
+								<div class="d-flex align-items-center">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">What is $JAM?</span>
+								</div>
+								<div class="answer">
+									JAM is the value carrier of Jambo Network. The stability of Jambo ecosystem enables permanent effective value growth of JAM. 
+									All stakeholders including advertisers, channels and users can share the distributed online valuation and dividends of JAM within Jambo platform.
+									JAM is the only cryptocurrency used for value exchange.
+									<p>1.Cross-chain services on Jambo technology platform</p>
+									<p>2.Liquidity Staking of JAMBO advertising alliance</p>
+									<p>3.Exchange media between advertisements and channels</p>
+								</div>
+								<div class="d-flex align-items-center question2">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">Overview</span>
+								</div>
+								<div class="answer">
+									<p class="fwb">$JAM</p>
+									<p>√  Token of Jambo ecosystem</p>
+									<p>√  Earned by farmers and stakers</p>
+									<p>√  Used for Jambo Network advertising section function</p>
+									<p class="mt10 fwb">$JAM-LP</p>
+									<p>√  Represents proportion of given Liquidity Pool</p>
+									<p>√  $JAM-LP tokens are named by their underlying assets (eg. LP of JAM-BNB = $JAMLP JAM/BNB)</p>
+									<p>√  $JAM-LP tokens can be used to farm $JAM</p>
+									
+								</div>
+							</div>
+							<div class="questionheader fwb questionmargin">Getting Started</div>
+							<div id="howork">
+								<div class="d-flex align-items-center">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">Wallet</span>
+								</div>
+								<div class="answer">
+									To use Jambo Network you need a MetaMask wallet connected to the BSC network. For information on MetaMask, visit their website.
+									MetaMask by default only supports the Ethereum network. However, when you connect MetaMask to Jambo Network,
+									 Jambo Network will automatically configure MetaMask to work with BSC.
+								</div>
+								<div class="d-flex align-items-center question2">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">How JAM works?</span>
+								</div>
+								<div class="answer">
+									In the advertising section, any user can publish advertising and will receive airdrop rewards in return. The specific operations are as follows:
+									Users need to mortgage 50 JAM to create their own advertising content. After 72 hours, they will receive a JAM airdrop rewards.
+									When the advertisement is removed, the system will automatically return 50JAM to the user account, charging BNB as a handling fee for the information on the chain.
+									For mining, there are two liquid mining pools: JAM/BNB LP and JAM/BUSD LP, and two single-stake mining pools JAM and USDT. Choosing different mining pools will get the corresponding JAM rewards. Joining the liquidity mining LP pool works as follows: (take JAM/BNB LP as an example)
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fixed-top hidden-md hidden-lg hidden-sm">
 			<section id="wiki" class="position-relative pluscont wiki h100" >
 				<div class="wikicont fwb color-defalut">
 					Jambo Network Dapp FAQ
@@ -40,108 +141,170 @@
 				<div class="container">
 					<div class="panel-group" id="accordion">
 						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title fwb">
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapseOne">
+							<div>
+								<h4 class="panel-title fwb color-theme quessort">
 										Introduction to Jambo Network
-									</a>
 								</h4>
 							</div>
-							<div id="collapseOne" class="panel-collapse collapse in">
-								<div class="panel-body">
-									<div class="d-flex align-items-center">
-										<div class="blacksqure"></div>
-										<span class="qatitle fwb ">What is Jambo Network?</span>
-									</div>
-									<div class="answer">
-										As the first blockchain ad-tech support platform, Jambo has been committed to creating a transparent and credible decentralized 
-										advertising industry value ecology. With the Polkadot heterogeneous multi-chain architecture, the platform can realize the value 
-										interoperability of different advertising industry chains, make the database transparent, greatly improve the service development of the 
-										blockchain advertising industry, and accelerate the serving efficiency of digital advertising.
-									</div>
-									<div class="d-flex align-items-center question2">
-										<div class="blacksqure"></div>
-										<span class="qatitle fwb ">What are the potentials of Jambo within Dapp market?</span>
-									</div>
-									<div class="answer">
-										Currently, Dapp such as wallets, games, social networking, and finance are not involved in non-advertising display business, 
-										which will become one of Jambo's strategic ecological expansion. 
-										Through the Jambo cross-chain slot, both advertisers and channel parties can choose a suitable form of advertising through the Jambo advertising protocol to publish with one click. The audience, the coverage area, the playback period, the number of playbacks, etc. are all recorded on the chain,
-										 creating a rich The new ecology of advertising media on the chain leads the development of the blockchain advertising industry.
-									</div>
+							<div class="panel-body">
+								<div class="d-flex align-items-center">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">What is Jambo Network?</span>
+								</div>
+								<div class="answer">
+									As the first blockchain ad-tech support platform, Jambo has been committed to creating a transparent and credible decentralized 
+									advertising industry value ecology. With the Polkadot heterogeneous multi-chain architecture, the platform can realize the value 
+									interoperability of different advertising industry chains, make the database transparent, greatly improve the service development of the 
+									blockchain advertising industry, and accelerate the serving efficiency of digital advertising.
+								</div>
+								<div class="d-flex align-items-center question2">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">What are the potentials of Jambo within Dapp market?</span>
+								</div>
+								<div class="answer">
+									Currently, Dapp such as wallets, games, social networking, and finance are not involved in non-advertising display business, 
+									which will become one of Jambo's strategic ecological expansion. 
+									Through the Jambo cross-chain slot, both advertisers and channel parties can choose a suitable form of advertising through the Jambo advertising protocol to publish with one click. The audience, the coverage area, the playback period, the number of playbacks, etc. are all recorded on the chain,
+									 creating a rich The new ecology of advertising media on the chain leads the development of the blockchain advertising industry.
 								</div>
 							</div>
 						</div>
+						
+						
 						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title fwb">
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapseTwo">
+							<div>
+								<h4 class="panel-title fwb color-theme quessort">
 										Tokenomics
-									</a>
 								</h4>
 							</div>
-							<div id="collapseTwo" class="panel-collapse collapse">
-								<div class="panel-body">
-									<div class="d-flex align-items-center">
-										<div class="blacksqure"></div>
-										<span class="qatitle fwb ">What is $JAM?</span>
-									</div>
-									<div class="answer">
-										JAM is the value carrier of Jambo Network. The stability of Jambo ecosystem enables permanent effective value growth of JAM. 
-										All stakeholders including advertisers, channels and users can share the distributed online valuation and dividends of JAM within Jambo platform.
-										 JAM is the only cryptocurrency used for value exchange. 1.Cross-chain services on Jambo technology platform 2.
-										Liquidity Staking of JAMBO advertising alliance 3.Exchange media between advertisements and channels
-									</div>
+							<div class="panel-body">
+								<div class="d-flex align-items-center">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">What is $JAM?</span>
+								</div>
+								<div class="answer">
+									JAM is the value carrier of Jambo Network. The stability of Jambo ecosystem enables permanent effective value growth of JAM. 
+									All stakeholders including advertisers, channels and users can share the distributed online valuation and dividends of JAM within Jambo platform.
+									JAM is the only cryptocurrency used for value exchange.
+									<p>1.Cross-chain services on Jambo technology platform</p>
+									<p>2.Liquidity Staking of JAMBO advertising alliance</p>
+									<p>3.Exchange media between advertisements and channels</p>
+								</div>
+								<div class="d-flex align-items-center question2">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">Overview</span>
+								</div>
+								<div class="answer">
+									<p class="fwb">$JAM</p>
+									<p>√  Token of Jambo ecosystem</p>
+									<p>√  Earned by farmers and stakers</p>
+									<p>√  Used for Jambo Network advertising section function</p>
+									<p class="mt10 fwb">$JAM-LP</p>
+									<p>√  Represents proportion of given Liquidity Pool</p>
+									<p>√  $JAM-LP tokens are named by their underlying assets (eg. LP of JAM-BNB = $JAMLP JAM/BNB)</p>
+									<p>√  $JAM-LP tokens can be used to farm $JAM</p>
 								</div>
 							</div>
 						</div>
+						
+						
 						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title fwb">
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapseThree">
+							<div>
+								<h4 class="panel-title fwb color-theme quessort">
 										Getting Started
-									</a>
 								</h4>
 							</div>
-							<div id="collapseThree" class="panel-collapse collapse">
-								
+							<div class="panel-body">
+								<div class="d-flex align-items-center">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">Wallet</span>
+								</div>
+								<div class="answer">
+									To use Jambo Network you need a MetaMask wallet connected to the BSC network. For information on MetaMask, visit their website.
+									MetaMask by default only supports the Ethereum network. However, when you connect MetaMask to Jambo Network,
+									 Jambo Network will automatically configure MetaMask to work with BSC.
+								</div>
+								<div class="d-flex align-items-center question2">
+									<div class="blacksqure"></div>
+									<span class="qatitle fwb ">How JAM works?</span>
+								</div>
+								<div class="answer">
+									In the advertising section, any user can publish advertising and will receive airdrop rewards in return. The specific operations are as follows:
+									Users need to mortgage 50 JAM to create their own advertising content. After 72 hours, they will receive a JAM airdrop rewards.
+									When the advertisement is removed, the system will automatically return 50JAM to the user account, charging BNB as a handling fee for the information on the chain.
+									For mining, there are two liquid mining pools: JAM/BNB LP and JAM/BUSD LP, and two single-stake mining pools JAM and USDT. Choosing different mining pools will get the corresponding JAM rewards. Joining the liquidity mining LP pool works as follows: (take JAM/BNB LP as an example)
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<footer id="footer">
-				<div class="container">
-					<div class="footerbox">
-						<div class="footitem">
-							<img src="img/h1.png" class="footimg">
-							<span class="hidden-xs">Telegram</span>
-						</div>
-						<div class="footitem">
-							<img src="img/h2.png" class="footimg">
-							<span class="hidden-xs">Medium</span>
-						</div>
-						<div class="footitem">
-							<img src="img/h3.png" class="footimg">
-							<span class="hidden-xs">Github</span>
-						</div>
-						<a class="footitem" href="wiki.html">
-							<img src="img/h4.png" class="footimg">
-							<span class="hidden-xs">Wiki</span>
-						</a>
-					</div>
-				</div>
-			</footer>
 			</div>
 		</div>
 		</div>
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/aos.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			function GetRequestParameters(locationsearch){
+				let url = locationsearch;  
+				let theRequest = new Object();  
+				if (url.indexOf("?") != -1) {  
+						let str = url.substr(1);  
+						let strs = str.split("&");  
+						for (let i = 0; i < strs.length; i++) {  
+						let fstr = strs[i].indexOf('=')
+								theRequest[strs[i].split("=")[0]] = (strs[i].slice(fstr+1));  
+						}  
+				}  
+				return theRequest; 
+			}
+			let tmpUrlSearch = decodeURI(window.location.href)
+			let Oindex= tmpUrlSearch.indexOf('?')
+			var tempStr =tmpUrlSearch.slice(Oindex)
+			let tmpParas= GetRequestParameters(tempStr);
+			console.log(tmpParas)
+			var app = new Vue({
+				el: '#app',
+				data: {
+					QuesArr:[{name:'Introduction to Jambo Network',openState:true,childQues:['What is Jambo Network?','What are the potentials of Jambo within Dapp market?']},
+					{name:'Tokenomics',openState:false,childQues:['What is $JAM?','Overview']},
+					{name:'Getting Started',openState:false,childQues:['Wallet','How JAM works?']}
+					],
+					QuesIndex:0,
+					childIndex:0,
+					isPhone:false
+				},
+				created() {
+					this.isPhone = this.isMobile()
+					if(tmpParas.current){
+						this.QuesIndex=tmpParas.current
+						this.QuesArr[this.QuesIndex].openState = true
+						this.QuesArr[0].openState = false
+						this.childIndex = 1
+					}
+				},
+				methods: {
+					isMobile() {
+						let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+						return flag;
+					},
+					outerques(ind,ite){
+						this.QuesIndex = ind
+						this.childIndex = 0
+						ite.openState = !ite.openState
+						this.QuesArr.forEach((item,index)=>{
+							if(index!==this.QuesIndex){
+								item.openState = false
+							}
+						})
+					},
+					inderques(inddex){
+						this.childIndex = inddex
+					},
+				}
+			})
 		</script>
 	</body>
 </html>

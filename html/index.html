@@ -6,8 +6,8 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<meta content="did" name="description">
 		<meta content="did" name="keywords">
-		<link href="img/logo.png" rel="icon">
-		<link href="img/logo.png" rel="apple-touch-icon">
+		<link href="img/favicon.ico" rel="icon">
+		<link href="img/favicon.ico" rel="apple-touch-icon">
 		<link rel="stylesheet" type="text/css" href="css/aos.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -16,20 +16,51 @@
 	</head>
 	<body>
 		<!--  app容器 -->
-		<div id="app" v-cloak>
-		<header id="header" class="fixed-top" >
+		<div id="app" v-cloak class="pluscont ">
+		<header id="header" class="fixed-top">
 			<div class="container d-flex flex-jsb align-items-center userheaders" >
-				<h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="img/logo.png" alt=""
-							class="img-fluid"></h1>
-				<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''">
+				<h1 class="logo me-auto"><a href="index.html" class="logo me-auto">
+					<img src="img/logo.png" alt=""class="img-fluid hidden-xs">
+					<img src="./img/logophone.png" alt="" class="img-fluid hidden-lg hidden-md hidden-sm logophone"></a>
+				</h1>
+				<span class="fwb f18 hidden-lg hidden-md hidden-sm color-defalut phonetit">HOME
+				</span>
+				<nav id="navbar" class="navbar" :class="toggleState?'navbar-mobile':''"  @click="toggleMenu">
 					<ul>
-						<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/logo.png"></li>
+						<li class="phoneshowlink hidden-lg hidden-md hidden-sm">
+							<div>
+								<a class="footitem" href="https://t.me/JamboNetwork" target="_blank">
+									<img src="img/h1.png" class="footimg">
+									<span>Telegram</span>
+								</a>
+							</div>
+							<div>
+								<a class="footitem" href="https://medium.com/@jambonetofficial" target="_blank">
+									<img src="img/h2.png" class="footimg">
+									<span>Medium</span>
+								</a>
+							</div>
+							<div>
+								<a class="footitem" href="https://github.com/JAMBO-NETWORK" target="_blank">
+									<img src="img/h3.png" class="footimg">
+									<span>Github</span>
+								</a>
+								
+							</div>
+							<div>
+								<a class="footitem" href="wiki.html" target="_blank">
+									<img src="img/h4.png" class="footimg">
+									<span>Wiki</span>
+								</a>
+							</div>
+						</li>
+						<li class="hidden-lg hidden-md hidden-sm phonelogo"><img src="img/menu.png"></li>
 						<li><a class="nav-link scrollto active" href="index.html">Home</a></li>
 						<li><a class="nav-link scrollto" href="liquid.html">Liquidity</a></li>
 						<!--  <i class="bi bi-chevron-down"></i> -->
-						<li class="dropdown" v-if="!walletaddress"><a href="#"><span class="walletdrop">Collect Wallet</span></a>
+						<li class="dropdown" v-if="!walletaddress" @click.stop="showPhone"><a href="#" class="walletcollrt" @click="showmobilemask"><span class="walletdrop"/>Collect Wallet</span></a>
 							<ul class="languageList">
-								<li class="linkwallet"><a href="#" lang="cn" @click="pcLink">
+								<li class="linkwallet"><a href="#" lang="cn" @click.stop="pcLink">
 										<p class="coinname">B</p> BSC
 									</a></li>
 								<li><a href="#" lang="cn">
@@ -39,42 +70,46 @@
 										<p class="coinname">P</p> Plokadot(on the way)
 									</a></li>
 							</ul>
+							
 						</li>
 						<li v-if="walletaddress" class="walletbox"><span class="walletaddress">{{walletaddress}}</span></li>
 					</ul>
-					<i class="bi bi-list mobile-nav-toggle" @click="toggleMenu"></i>
+					<i class="bi bi-list mobile-nav-toggle" @click.stop="toggleState=true"></i>
 				</nav>
 			</div>
 		</header>
-		<div class="pluscont">
+		<div class="">
 			<!-- create -->
-			<section id="hero" class="d-flex align-items-center position-relative" data-aos="fade-up"
-				data-aos-delay="100">
+			<section id="hero" class="d-flex align-items-center position-relative">
 				<div class="container">
 					<div class="hidden-sm hidden-lg createlabel mb10">CREATE</div>
 					<div class="createbox bg-box">
 						<div class="clearfix">
-							<div class="col-lg-6 col-sm-12 col-xs-12">
+							<div class="col-lg-6 col-sm-12 col-xs-12 olfer">
 								<div class="hidden-xs createlabel hidden-md">CREATE</div>
-								<div class="innerlabel mt10 fwb">Create</div>
-								<div class="innerlabel mt2"><span class="fwb">Your</span><span>
+								<div class="innerlabel fwb">Create</div>
+								<div class="onnerlabel "><span class="fwb">Your</span><span>
 										decentralized</span><span class="fwb"> Advertisement</span></div>
 								<div class="createtips">
-									<div class="d-flex align-items-center f14 color333">
+									<div class="f14 color333">
 										<span>Create your decentralized Ads to get JAM airdrop tokens</span>
-										<img src="img/ques.png" class="ml10">
+										<a href="wiki.html?current=2"><img src="img/ques.png" class="ml10 vques"></a>
 									</div>
-									<div class="d-flex align-items-center f12 color-blue mt6">
+									<div class="d-flex align-items-center f12 color-blue sharebix">
 										<span>Share with your friends</span>
 										<img src="img/copy.png" class="ml10" @click="copyText(shareUrl,$event)">
 									</div>
 								</div>
 							</div>
 							<div class="col-lg-6 col-sm-12 col-xs-12">
-								<div class="rightone fwb">JAM Price:<span
-										class="color-orange">${{advertisePrice}}</span></div>
-								<div class="rightwo fwb"><span>JAM:</span>{{JAMbanlance}}</div>
-								<div class="d-flex flex-jsb mt10 align-items-center">
+								<div class="rightone fwb">
+									<div class="phoneline hidden-xs hidden-md hidden-sm"></div>
+									<div class="Jamprice">
+										<span>JAM Price:</span><span class="color-orange">${{advertisePrice}}</span>
+									</div>
+								</div>
+								<div class="rightwo"><span>JAM:</span><span class="fwb">{{JAMbanlance}}</span></div>
+								<div class="d-flex flex-jsb  align-items-center btmfunc">
 									<button class="createBtn bg-theme color-white fwb"
 										@click="advOprate">{{advertiseState==0?'CREATE':(advertiseState==1?'CREATING':(advertiseState==2?'UNLOCK':'REMOVE'))}}</button>
 									<button class="createBtn color-white fwb  uploadbtn"
@@ -87,9 +122,8 @@
 				</div>
 			</section>
 			<!-- record -->
-			<section id="passverti" class="d-flex align-items-center position-relative" data-aos="fade-up"
-				data-aos-delay="200">
-				<div class="container" data-aos="fade-up">
+			<section id="passverti" class="d-flex align-items-center position-relative">
+				<div class="container">
 					<div class="hidden-sm hidden-lg createlabel mb10">RECORD</div>
 					<div class="createbox bg-box">
 						<div class="clearfix">
@@ -97,47 +131,96 @@
 								<div class="hidden-xs createlabel hidden-md mb20">RECORD</div>
 								<div class="nodata" v-if="recordList.length<=0">
 									<img src="img/nodata.png" class="nodataimg">
-									<p class="notxt">暂无记录</p>
+									<p class="notxt">NO RECORD</p>
 								</div>
-								<div class="recordCont" v-if="recordList.length>0">
-									<div v-for="(ritem,rindex) in recordList" :key="rindex" class="recorditem">
-										<img :src="ritem.imgUrl" class="adpic">
-										<div class="f16 advaddress">{{ritem.userAddr}}</div>
+								<div class="recordCont" v-if="recordList.length>0" :class="recordList.length>1&&hfive?'linecont':''">
+									<div v-for="(ritem,rindex) in recordList" :key="rindex"   class="recorditem" :class="{ mauto: recordList.length==1,poweritem:hasPower}">
+										<!-- <img :src="ritem.imgUrl" class="adpic"> -->
+										<div class="genaitem" :class="{poweritem:hasPower&&hfive}">
+											<div class="recordsort" v-if="hasPower&&hfive" :class="ritem.isHide==1?'unsubmnit':'bg-white'">
+												<input type="number" class="width100 text-center" v-model="ritem.sortNum"/>
+											</div>
+											<div class="recordsubmit color-white" :class="ritem.isHide==1?'unrecord':'bg-theme'" v-if="hasPower&&hfive" @click="sortnum(ritem,rindex)">SUBMIT</div>
+											<div class="f16 advaddress">{{ritem.userAddr}}</div>
+											<div class="adpic" :style="{backgroundImage:'url('+ritem.imgUrl +')'}" style="background-size: contain;background-repeat: no-repeat;background-position: center;" ></div>
+											<!-- <img src="img/adver.png" class="adpic"> -->
+											<div class="showrecord" v-if="hasPower&&hfive" :class="ritem.isHide==1?'unsubmnit':'bg-theme'">
+												<img :src="ritem.isHide==1?'img/ey2.png':'img/ey1.png'" class="eyes" @click="oparateRecord(ritem,rindex)">
+											</div>
+										</div>
+										<div class="sjitem" v-if="hasPower&&!hfive">
+											<div class="d-flex align-items-center flex-jsb reinpbox">
+												<input type="number" v-model="ritem.sortNum" class="showsinp" />
+												<div class="resubmit color-white f12 fwb"  @click="sortnum(ritem,rindex)" :class="ritem.isHide==1?'unrecord':'bg-theme'">SUBMIT</div>
+											</div>
+											<div class="showsrecord" :class="ritem.isHide==1?'unsubmnit':'bg-theme'">
+												<img :src="ritem.isHide==1?'img/ey2.png':'img/ey1.png'" class="eyes" @click="oparateRecord(ritem,rindex)">
+											</div>
+										</div>
 									</div>
-									<div class="por dline" v-if="recordList.length>=2"></div>
 								</div>
-								<div class="pages d-flex flex-jcc" v-if="recordList.length>0">
-									<p class="one pageitem" i18n="pageone" @click="firstPage">第一页</p>
-									<p class="add pageitem" i18n="pagelast" @click="lastPage">上一页</p>
-									<p class="reduce pageitem" i18n="pagenext" @click="nextPage">下一页</p>
-								</div>
+								<ul class="pages d-flex flex-jcc hidden-xs" v-if="recordList.length>0&&allPage>1">
+									<li class="one d-flex align-items-center  flex-jcc sidepage" @click="firstPage">
+										<img src="img/pglf.png" >
+										<span>FirstPage</span>
+									</li>
+									<li class="add d-flex align-items-center flex-jcc pageitem" @click="lastPage">
+										<img src="img/z1.png" >
+									</li>
+									<!-- allPage -->
+									<li v-for="index in allPage" class="d-flex align-items-center flex-jcc pageitem pagenumber" @click="choosePage(index)" :class="{ 'active': page == index}">
+										<a>{{ index }}</a>
+									</li>
+									<li class="reduce d-flex align-items-center flex-jcc pageitem" @click="nextPage">
+										<img src="img/z2.png" >
+									</li>
+									<li class="one d-flex align-items-center flex-jcc sidepage ml10"  @click="endPage">
+										<span>LastPage</span>
+										<img src="img/pgrh.png" >
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<footer id="footer">
+			<footer id="footer" class="hidden-sm hidden-xs">
 				<div class="container">
 					<div class="footerbox">
-						<div class="footitem">
+						<a class="footitem" href="https://t.me/JamboNetwork" target="_blank">
 							<img src="img/h1.png" class="footimg">
 							<span class="hidden-xs">Telegram</span>
-						</div>
-						<div class="footitem">
+						</a>
+						<a class="footitem" href="https://medium.com/@jambonetofficial" target="_blank">
 							<img src="img/h2.png" class="footimg">
 							<span class="hidden-xs">Medium</span>
-						</div>
-						<div class="footitem">
+						</a>
+						<a class="footitem" href="https://github.com/JAMBO-NETWORK" target="_blank">
 							<img src="img/h3.png" class="footimg">
 							<span class="hidden-xs">Github</span>
-						</div>
-						<a class="footitem" href="wiki.html">
+						</a>
+						<a class="footitem" href="wiki.html" target="_blank">
 							<img src="img/h4.png" class="footimg">
 							<span class="hidden-xs">Wiki</span>
 						</a>
 					</div>
 				</div>
 			</footer>
+			<!-- 链接钱包的弹窗 -->
+			<div class="shadowbox" v-show="phoneshow">
+				<div class="walletshadow py20 f14 fwb text-center px20">
+					<div class="color-defalut">COLLECT WALLET</div>
+					<div class="walletdivide color-defalut mt20" @click.stop="pcLink">
+						BSC
+					</div>
+					<div class="walletdivide othervide mt10">
+						HECO(on the way)
+					</div>
+					<div class="walletdivide othervide mt10">
+						Plokadot(on the way)
+					</div>
+				</div>
+			</div>
 			<!-- 链接钱包的弹窗 -->
 			<div class="linkBox hidden">
 				<div class="nopowerbox pt15">
@@ -163,16 +246,16 @@
 					<div class="approvalbox">
 						<div class="d-flex flex-jsb align-items-center">
 							<span class="color-gray f14">JAM:</span>
-							<span class="fwb color-red f16">-10</span>
+							<span class="fwb color-red f18">-10</span>
 						</div>
-						<div class="d-flex flex-jsb align-items-center mt6">
+						<div class="d-flex flex-jsb align-items-center mt15">
 							<span class="color-gray f14">JAM:</span>
-							<span class="fwb color333 f16">{{JAMbanlance}}</span>
+							<span class="fwb color333 f18">{{JAMbanlance}}</span>
 						</div>
 					</div>
 					<div class="d-flex flex-jcc confirmbox">
-						<button class="confirmbtn  sureApproval approval" :class="approvalState?'sgray':'bg-theme'" @click="approveJam">APPROVAL</button>
-						<button class="confirmbtn sureApproval confirmit ml15 bg-theme">COMFIRM</button>
+						<button class="confirmbtn  sureApproval approval" @click="approveJam">APPROVAL</button>
+						<button class="confirmbtn sureApproval confirmit ml15 sgray">COMFIRM</button>
 					</div>
 				</div>
 			</div>
@@ -180,10 +263,11 @@
 			<div class="uploadBox hidden">
 				<div class=" pt15 upcont nopowerbox">
 					<div class="addimgbox upfilebox">
-						<div class="uploadbox position-relative">
+						<div class="uploadbox position-relative text-center">
 							<input type="file" class="uploadcode imgFiles" name="" id="" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" multiple="">
 							<img class="uploadCodePic uploadDown" src="img/up.png">
 							<span class="f12 color-gray">Drap & Drop your files here</span>
+							<p class="f12 color-gray limitimg">(Minimum width and height of picture 122px * 68px)</p>
 						</div>
 					</div>
 					<div class="showcont">
@@ -214,13 +298,19 @@
 		<script src="js/contracts/address.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/contracts/mortgage_abi.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/contracts/token_abi.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/contracts/md5Sign.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			var web3Provider;
 			var web3;
 			var app = new Vue({
 				el: '#app',
 				data: {
+					hfive:true,//是否是手机端
+					hasPower:true,//有没有权限编辑
+					phoneshow:false,
 					toggleState:false,
+					phonemenu:false,
 					walletaddress:'',
 					originImage:'',
 					shareUrl: '',
@@ -236,25 +326,53 @@
 					pageSize: 8,
 					chainType:'BSC',
 					finish: false,
-					recordList: [] //交易记录
+					recordList: [
+					] //交易记录
 				},
 				async mounted() {
 					this.shareUrl = window.location.href
+					this.hfive = !this.isMobile()
 					//手机端连接钱包 监听
-					// if(this.isMobile()){
-					this.linkWallet();
+					await this.linkWallet();
 					this.listenEthereum();
-					// }
-					this.getData()
 					this.getTvlAndJamPrice(); // 获取总锁仓和jam价格
+					// 手机端上拉加载更多
+					
+				},
+				destroyed() {
+				   window.removeEventListener('scroll', this.handleScroll, true); // 离开页面清除（移除）滚轮滚动事件
 				},
 				methods: {
+					handleScroll() {
+						console.log(22)
+						//变量scrollTop是滚动条滚动时，距离顶部的距离
+						var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+						//变量windowHeight是可视区的高度
+						var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+						//变量scrollHeight是滚动条的总高度
+						var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+						//滚动条到底部的条件
+						if (Math.ceil(scrollTop) + windowHeight >= scrollHeight && !this.finish&&this.recordList.length>0) {
+							// this.finish = false;
+							this.getData()
+						}
+					},
 					toggleMenu(){
-						this.toggleState = !this.toggleState
+						if(this.isMobile()){
+							this.toggleState = !this.toggleState
+						}
 					},
 					isMobile() {
 						let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
 						return flag;
+					},
+					showmobilemask(){
+						if(this.isMobile()){
+							this.phoneshow =!this.phoneshow
+						}
+					},
+					showPhone(){
+						this.phonemenu = !this.phonemenu
 					},
 					uploadShow(){
 						if(this.advertiseState!==1)return
@@ -267,7 +385,7 @@
 							try {
 								ethereum.enable();
 							} catch (error) {
-								parent.layer.msg("用户取消授权");
+								parent.layer.msg("User cancel authorization");
 								return;
 							}
 						} else if (web3) {
@@ -280,15 +398,24 @@
 							console.log("https://http-testnet.hecochain.com");
 						}
 						web3 = new Web3(web3Provider);
-						web3.eth.net.getId((err, netId) => {
+						await web3.eth.net.getId((err, netId) => {
 							console.log("netId: ", netId);
+							curChainId = netId
 						});
+						if (curChainId != chainId) {
+							parent.layer.msg(testText)
+							return
+						}
 						await this.getDefaultAccount();
 						await this.getAdvertiseState() // 0 没有广告  1已付款  2 已存在广告
 						mortgageInstance = await new web3.eth.Contract(mortgageAbi, mortgageAddr);
 						jamInstance = await new web3.eth.Contract(tokenAbi, jamAddr);
 						await this.getJamBalance()	// 获取jam余额
-						await this.isApprove()
+						// await this.isApprove()
+						await this.getData()
+						if(this.isMobile()){
+							window.addEventListener('scroll', this.handleScroll, true); // 监听（绑定）滚轮滚动事件
+						}
 					},
 					listenEthereum() {
 						ethereum.on('accountsChanged', function (accounts) {
@@ -329,12 +456,10 @@
 						    dataType: "json",
 						    success: async function (data) {
 						        if (data.code == "00000") {
-						            console.log("data: ", data)
 									if (data.data.has) {
 										that.advertiseState = 2;
 										var info = data.data.UserAdvertisement;
 										that.advertisePic = data.data.UserAdvertisement.imgUrl
-										console.log("info: ", info)
 									} else {
 										if (data.data.isDelete == 1) {
 											that.advertiseState = 3;
@@ -343,7 +468,6 @@
 											var userMap = await mortgageInstance.methods.userMap(defaultAccount).call()
 											let amount = userMap["amount"];
 											amount = amount / base18
-											console.log("amount: ", amount)
 											if (amount >= 10) { // 已质押代币
 												that.advertiseState = 1;
 											} else {
@@ -351,7 +475,7 @@
 											}
 										}
 									}
-									console.log("that.advertiseState: ", that.advertiseState)
+									console.log("advertiseState: ", that.advertiseState)
 						        } else {
 						            console.log("出现错误: ", data.msg);
 						        }
@@ -397,68 +521,91 @@
 					// 是否授权JAM，返回true表示已授权，false未授权
 					async isApprove() {
 						var allowance = await jamInstance.methods.allowance(defaultAccount, mortgageAddr).call();
+						console.log(allowance)
 						if (allowance == 0) {
 							this.approvalState =  false;
 						} else {
 							this.approvalState = true
 						}
-						console.log(this.approvalState)
 					},
 					// 授权JAM
 					async approveJam() {
-						let layopen = parent.layer.load(2, {time:50*1000})
+						let that= this
+						let jamBalance = await that.getJamBalance()
+						if (Number(jamBalance) < Number(mortgageValue)) {
+							parent.layer.msg("JAM Insufficient balance")
+							return
+						}
+						let layopenss;
 						jamInstance.methods.approve(mortgageAddr, MAX_INT).send({
 							from: defaultAccount,
 							gas: 500000
+						}).on('transactionHash', function(hash){
+							layopenss = parent.layer.load(2, {time: 50*1000})
 						}).then(function(res){
 							console.log("授权JAM成功")
-							this.approvalState = true
+							that.approvalState = true
 							$('.approval').addClass('sgray').removeClass('bg-theme')
+							$('.confirmit').addClass('bg-theme').removeClass('sgray')
 							parent.layer.msg("Approve JAM successfully")
-							parent.layer.close(layopen)
+							parent.layer.close(layopenss)
 						})
 					},
 					// 移除质押
 					async removeJam() {
 						let that = this
+						let layopenss;
 						mortgageInstance.methods.remove().send({
 							from: defaultAccount,
 							gas: 2000000
+						}).on('transactionHash', function(hash){
+							layopenss = parent.layer.load(2, {time: 50*1000})
 						}).then(async function(res){
 							parent.layer.msg("Successfully remove pledge")
+							that.advertiseState = 3
+							parent.layer.close(layopenss)
 							console.log("移除质押成功")
 							// 修改状态isDelete为2
-							let postData = {
+							let postData1 = {
 								userAddr:defaultAccount,
 								chainType:chainType,
 								isDelete:2
 							}
-							console.log(postData)
+							let postData = dealParams(postData1)
 							let remove = await that.removeAdv(postData)
-							console.log(remove)
 							if(remove.code=='00000'){
-								that.approvalState = 3
-								that.clearData()
-								that.getData()
+								that.advertiseState = 0
+								that.approvalState = false
 							}
+							that.getJamBalance()	// 获取jam余额
 						})
 					},
 					// 质押JAM
 					async mortgageJam() {
 						let that = this
+						console.log(that.approvalState)
 						if(!that.approvalState){
 							return
 						}
-						let layopens = parent.layer.load(2, {time: 50*1000})
+						let jamBalance = await that.getJamBalance()
+						if (Number(jamBalance) < Number(mortgageValue)) {
+							parent.layer.msg("JAM Insufficient balance")
+							return
+						}
 						var value = web3.utils.toWei(mortgageValue, 'ether');
+						let layopens;
 						mortgageInstance.methods.mortgage(value).send({
 							from: defaultAccount,
 							gas: 2000000
+						}).on('transactionHash', function(hash){
+							layopens = parent.layer.load(2, {time: 50*1000})
 						}).then(function(res){
 							parent.layer.msg("Successfully pledged JAM")
 							console.log("质押JAM成功")
+							that.advertiseState = 1
 							parent.layer.closeAll()
 							that.showUpload()
+							that.getJamBalance()	// 获取jam余额
 						})
 					},
 					isNull(obj) {
@@ -470,6 +617,10 @@
 					},
 					pcLink(){
 						let that = this
+						if(that.phoneshow&&that.isMobile()){
+							that.phoneshow = false
+							that.toggleState = false
+						}
 						layer.open({
 							type: 1,
 							title: false,
@@ -533,14 +684,15 @@
 							content: $('.uploadBox').html(),
 							success: function(layero, findex) {
 								let uploadcode = top.$('.uploadcode')
+								// showcont
 								if(!addPaycodeObj){
 									 top.$('.showcont').hide()
 								}
 								uploadcode.on('change',function(e){
+									console.log(e)
 									var that=this
 									addPaycodeObj = e.target.files[0]
 									that.originImage = e.target.files[0]
-									console.log(that.originImage)
 									let isLt5M= e.target.files[0].size / 1024 / 1024 < 8
 									if(!isLt5M){
 										parent.layer.msg('The uploaded picture cannot exceed 8M',{time:1200})
@@ -551,25 +703,34 @@
 									fileRender.onload = function(datas){
 										let res = datas.target || datas.srcElement
 										top.$('.filepic').attr('src',res.result)
+										top.$('.layui-layer-page .layui-layer-content').css('height','450px')
 										top.$('.showcont').show()
 									}
 								})
 								top.$('.delepic').on('click', function(){
 									addPaycodeObj=''
+									let upbox =top.$('.uploadcode')[1]
+									upbox.value = ''
+									top.$('.layui-layer-page .layui-layer-content').css('height','340px')
 									top.$('.showcont').hide()
 								})
 								$('.uploadSure').on('click',async function(){
 									// 刷新图片到OSS
+									if(!addPaycodeObj){
+										layer.msg('Please upload the image!')
+										return
+									}
 									let formParams = new FormData()
 									formParams.append('file',addPaycodeObj)
 									let adverImage =await that.upLoadImgae(formParams)
 									that.advertiseState = 2
 									that.advertisePic = adverImage.data
-									let postData = {
+									let postData1 = {
 										userAddr:defaultAccount,
 										imgUrl:adverImage.data,
 										chainType:chainType
 									}
+									let postData = dealParams(postData1)
 									await that.saveAdvertise(postData)
 									// 刷新RECORD
 									that.clearData()
@@ -580,6 +741,7 @@
 							}
 						})
 					},
+				
 					//保存广告
 					async saveAdvertise(obj){
 						return new Promise(function (resolve, reject) {
@@ -594,6 +756,9 @@
 					advOprate() {
 						let that = this
 						console.log(that.advertiseState)
+						if(!this.walletaddress){
+							this.pcLink()
+						}else{
 						//开始质押
 						if (that.advertiseState == 0) {
 							layer.open({
@@ -605,9 +770,17 @@
 								shift: 2,
 								shadeClose: true,
 								content: $('.createBox').html(),
-								success: function(layero, dindex) {
+								success:async function(layero, dindex) {
+									if(that.jamBalance>0){
+										$('.approval').addClass('sgray').removeClass('bg-theme')
+										$('.confirmit').addClass('bg-theme').removeClass('sgray')
+									}else{
+										$('.approval').addClass('bg-theme').removeClass('sgray')
+										$('.confirmit').addClass('sgray').removeClass('bg-theme')
+									}
+									let jamBalance = await that.getJamBalance()
 									$('.approval').on('click', function(){
-										if(that.approvalState){
+										if(that.jamBalance==0){
 											return
 										}else{
 											that.approveJam()
@@ -638,17 +811,20 @@
 								success: function(layero, dindex) {
 									//删除广告后
 									$('.cancelAdv').on('click',async function() {
-										let postData = {
+										let postData1 = {
 											userAddr:defaultAccount,
 											chainType:chainType,
 											isDelete:1
 										}
-										console.log(postData)
+										let postData = dealParams(postData1)
 										let remove = await that.removeAdv(postData)
-										console.log(remove)
 										if(remove.code=='00000'){
-											that.advertiseState = 0
+											that.advertiseState = 3
 											that.advertisePic = ''
+											that.clearData()
+											// if(!that.isMobile()){
+												that.getData()
+											// }
 											//删除广告未移除资产
 											that.removeJam()
 										}
@@ -657,6 +833,60 @@
 								}
 							})
 						}
+						}
+					},
+					// 操纵显示隐藏
+					async oparateRecord(ritem,rindex){
+						let that = this
+						// 看广告是隐藏还是显示的状态
+						if(ritem.isHide==0){
+							let hideresult = await that.hideAdvertise({id:ritem.id})
+							ritem.isHide==1
+							//改变当前栏目的开关状态
+							
+						}else{
+							let showresult = await that.showAdvertise({id:ritem.id})
+							ritem.isHide==0
+						}
+						that.clearData()
+						that.getData()
+					},
+					// 隐藏广告
+					async hideAdvertise(obj){
+						return new Promise(function (resolve, reject) {
+							hideAdvertisement(obj).then((res) => {
+								resolve(res)
+							}).catch(err=>{
+								console.log(err)
+								parent.layer.msg('Hide failed')
+							})	
+						})
+					},
+					//显示广告
+					async showAdvertise(obj){
+						return new Promise(function (resolve, reject) {
+							showAdvertisement(obj).then((res) => {
+								resolve(res)
+							}).catch(err=>{
+								console.log(err)
+								parent.layer.msg('Display failed')
+							})	
+						})
+					},
+					// 排序
+					sortnum(item,index){
+						let that = this
+						if (item.isHide == 1) {
+							return
+						}
+						updateSortNum({id:item.id,sortNum:Number(item.sortNum)}).then((res) => {
+							// 排序后的操作
+							that.clearData()
+							that.getData()
+						}).catch(err=>{
+							console.log(err)
+							parent.layer.msg('Sorting failed')
+						})	
 					},
 					//删除广告
 					async removeAdv(obj){
@@ -670,7 +900,7 @@
 						})
 					},
 					firstPage() {
-						if (this.page <= 2) {
+						if (this.page <= 1) {
 							layer.msg('The current page is the first page')
 							return
 						}
@@ -678,10 +908,31 @@
 						this.getData()
 					},
 					nextPage() {
+						if (this.page == this.allPage) {
+							layer.msg('The current page is the last page')
+							return
+						} else {
+							this.page = this.page+ 1
+							this.finish = false
+							this.recordList = []
+							this.getData()
+						}
+					},
+					choosePage(i) {
+						if(i == this.page){
+							return
+						}
+						this.page = i
+						this.finish = false
+						this.recordList = []
+						this.getData()
+					},
+					endPage() {
 						if (this.page == this.allPage + 1) {
 							layer.msg('The current page is the last page')
 							return
 						} else {
+							this.page = this.allPage
 							this.finish = false
 							this.recordList = []
 							this.getData()
@@ -704,16 +955,30 @@
 						this.recordList = []
 					},
 					getData() {
-						if (this.finish) return
+						if(this.isMobile()){
+							if (this.finish) return
+						}
 						let param = {
 							pageNo: this.page,
 							pageSize: this.pageSize,
-							chainType:this.chainType
+							chainType: this.chainType,
+							userAddr: defaultAccount
 						}
 						getAdvlist(param).then((res) => {
-							console.log(res.data.List)
+							this.allPage = res.data.TotalPage
+							this.hasPower = res.data.IsOwner==1?true:false
 							if(!res.data.List)return
-							this.recordList = res.data.List
+							let sideList = res.data.List
+							sideList.forEach((i,indx)=>{
+								i.userAddr = this.getUserAddr(i.userAddr)
+							})
+							if(this.isMobile()){
+								this.finish = res.data.List.length < 8
+								!this.finish && (this.page += 1)
+								this.recordList = [...this.recordList, ...sideList]
+							}else{
+								this.recordList = sideList
+							}
 						})
 					}
 				}

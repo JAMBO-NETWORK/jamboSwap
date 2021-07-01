@@ -1,6 +1,7 @@
 package task
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
 	"github.com/ethereum/go-ethereum/common"
@@ -12,11 +13,23 @@ import (
 	decimalUtils "jamSwap/utils/decimals"
 	"jamSwap/utils/util"
 	"math/big"
+	"runtime/debug"
 	"strconv"
 	"strings"
 )
 
 var base18 int64 = 1000000000000000000
+
+func CheckOnChainStatusPanic() error {
+	fmt.Println("11111111111111111111111")
+	defer func() {
+		if p := recover(); p != nil {
+			logs.Error("panic recover! p:", p)
+			debug.PrintStack()
+		}
+	}()
+	return CheckOnChainStatus()
+}
 
 // 链上链下容错系统，如果有效广告没有对应链上的抵押资产，则将此广告改为无效
 func CheckOnChainStatus() error {
@@ -24,6 +37,10 @@ func CheckOnChainStatus() error {
 	list := dao.QueryValidList()
 	if len(list) > 0 {
 		for i := 0; i < len(list); i++ {
+			// 默认的四张图片
+			if list[i].Id == 1 || list[i].Id == 2 || list[i].Id == 3 || list[i].Id == 4 {
+				continue
+			}
 			userAddr := list[i].UserAddr
 			chainType := list[i].ChainType
 			// 查询用户的链上信息，余额是否大于mortgageAmount
@@ -54,7 +71,17 @@ func CheckOnChainStatus() error {
 
 // 从合约中获取流动池信息
 func ListenLiquidityInfo() error {
-	return UpdateLiquidityInfo("BSC")
+	return UpdateLiquidityInfoPanic("BSC")
+}
+
+func UpdateLiquidityInfoPanic(chainType string) error {
+	defer func() {
+		if p := recover(); p != nil {
+			logs.Error("panic recover! p:", p)
+			debug.PrintStack()
+		}
+	}()
+	return UpdateLiquidityInfo(chainType)
 }
 
 // 从合约中获取流动池信息
@@ -68,20 +95,20 @@ func UpdateLiquidityInfo(chainType string) error {
 	}
 	// TODO
 	// 上线记得修改
-	var routerInstance *router.Router
-	/*routerAddress := beego.AppConfig.String(chainType + "::routerAddress")
+	//var routerInstance *router.Router
+	routerAddress := beego.AppConfig.String(chainType + "::routerAddress")
 	routerInstance, err := router.NewRouter(common.HexToAddress(routerAddress), client)
 	if err != nil {
 		logs.Error("NewMortgage error: ", err)
 		return err
-	}*/
-	/*JAMAddr := beego.AppConfig.String(chainType + "::JAM")
+	}
+	JAMAddr := beego.AppConfig.String(chainType + "::JAM")
 	jamPrice, err := util.GetLpPrice(chainType, client, routerInstance, JAMAddr, 0)
 	if err != nil {
 		logs.Error("get jamPrice error: ", err)
 		return err
-	}*/
-	jamPrice := big.NewFloat(0.2)
+	}
+	//jamPrice := big.NewFloat(0.2)
 	logs.Info("jamPrice: ", jamPrice)
 
 	miningAddress := beego.AppConfig.String(chainType + "::miningAddress")

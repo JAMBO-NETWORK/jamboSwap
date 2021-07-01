@@ -1,0 +1,52 @@
+2021/06/28 11:42:35.249 [I] [main.go:27]  Log Init Successfully!
+2021/06/28 11:42:42.104 [I] [main.go:28]  Mysql Init Successfully!
+2021/06/28 11:42:42.104 [I] [main.go:30]  Timed Task Init Successfully!
+2021/06/28 11:42:42.332 [I] [asm_amd64.s:1373]  http server Running on http://:8062
+2021/07/01 11:59:23.127 [I] [main.go:27]  Log Init Successfully!
+2021/07/01 12:02:49.524 [I] [main.go:27]  Log Init Successfully!
+2021/07/01 12:02:55.751 [I] [main.go:28]  Mysql Init Successfully!
+2021/07/01 12:02:55.751 [I] [main.go:30]  Timed Task Init Successfully!
+2021/07/01 12:02:55.950 [I] [asm_amd64.s:1373]  http server Running on http://:8062
+2021/07/01 12:03:00.687 [I] [chainStatus.go:84]  jamPrice:  0.148882448786676451
+2021/07/01 12:03:01.770 [I] [chainStatus.go:84]  lpId= 0 ，的价格(USDT):  1
+2021/07/01 12:03:01.770 [I] [chainStatus.go:84]  lpId= 0 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 1 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:03:03.891 [I] [chainStatus.go:84]  lpId= 1 ，的价格(USDT):  0.1488824488
+2021/07/01 12:03:03.891 [I] [chainStatus.go:84]  lpId= 1 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 0.1488824488 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:03:05.531 [I] [chainStatus.go:164]  lpToken= 0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d 中的totalSupply= 77459666924148337703
+2021/07/01 12:03:05.854 [I] [chainStatus.go:164]  lpToken= 0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d 中的token1Balance= 200000000000000000000
+2021/07/01 12:03:06.026 [I] [chainStatus.go:164]  lpToken= 0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d 中的token1Amount= 0.38441282979558433
+2021/07/01 12:03:06.026 [I] [chainStatus.go:84]  lpId= 2 ，的价格(USDT):  0.7688256596
+2021/07/01 12:03:06.026 [I] [chainStatus.go:84]  lpId= 2 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 0.7688256596 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:03:07.693 [I] [chainStatus.go:164]  lpToken= 0x0b04907459912996636C22e671Acc38a04bC1Cbc 中的totalSupply= 4472135954999579392
+2021/07/01 12:03:08.039 [I] [chainStatus.go:164]  lpToken= 0x0b04907459912996636C22e671Acc38a04bC1Cbc 中的token1Balance= 187489942150829130930
+2021/07/01 12:03:08.207 [I] [chainStatus.go:164]  lpToken= 0x0b04907459912996636C22e671Acc38a04bC1Cbc 中的token1Amount= 6.24175159055297
+2021/07/01 12:03:08.207 [I] [chainStatus.go:84]  lpId= 3 ，的价格(USDT):  12.48350318
+2021/07/01 12:03:08.207 [I] [chainStatus.go:84]  lpId= 3 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 12.48350318 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:03:30.144 [I] [chainStatus.go:84]  jamPrice:  0.148882448786676451
+2021/07/01 12:03:31.151 [I] [chainStatus.go:84]  lpId= 0 ，的价格(USDT):  1
+2021/07/01 12:03:31.151 [I] [chainStatus.go:84]  lpId= 0 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 1 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:32:35.517 [I] [main.go:27]  Log Init Successfully!
+2021/07/01 12:32:41.068 [I] [main.go:28]  Mysql Init Successfully!
+2021/07/01 12:32:41.068 [I] [main.go:30]  Timed Task Init Successfully!
+2021/07/01 12:32:41.305 [I] [asm_amd64.s:1373]  http server Running on http://:8062
+2021/07/01 12:33:01.059 [I] [chainStatus.go:84]  jamPrice:  0.148882448786676451
+2021/07/01 12:33:02.411 [I] [chainStatus.go:84]  lpId= 0 ，的价格(USDT):  1
+2021/07/01 12:33:02.411 [I] [chainStatus.go:84]  lpId= 0 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 1 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:33:04.622 [I] [chainStatus.go:84]  lpId= 1 ，的价格(USDT):  0.1488824488
+2021/07/01 12:33:04.622 [I] [chainStatus.go:84]  lpId= 1 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 0.1488824488 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:33:06.462 [I] [chainStatus.go:164]  lpToken= 0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d 中的totalSupply= 77459666924148337703
+2021/07/01 12:33:06.939 [I] [chainStatus.go:164]  lpToken= 0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d 中的token1Balance= 200000000000000000000
+2021/07/01 12:33:06.940 [I] [chainUtils.go:75]  tokenAmount1： 2.5819888974716112568056871997098661477773763656934111171333307732239917392542
+2021/07/01 12:33:07.178 [I] [chainUtils.go:75]  tokenPriceBig： 148882448786676451
+2021/07/01 12:33:07.178 [I] [chainUtils.go:75]  tokenAmount： 0.38441282979558433
+2021/07/01 12:33:07.178 [I] [chainStatus.go:164]  lpToken= 0xeeb5944bf9fad57c41ae1cf9d389e965a3ed720d 中的token1Amount= 0.38441282979558433
+2021/07/01 12:33:07.178 [I] [chainStatus.go:84]  lpId= 2 ，的价格(USDT):  0.7688256596
+2021/07/01 12:33:07.178 [I] [chainStatus.go:84]  lpId= 2 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 0.7688256596 ，totalAmountNew= 0 ，apyNew= 0
+2021/07/01 12:33:08.959 [I] [chainStatus.go:164]  lpToken= 0x0b04907459912996636C22e671Acc38a04bC1Cbc 中的totalSupply= 4472135954999579392
+2021/07/01 12:33:09.430 [I] [chainStatus.go:164]  lpToken= 0x0b04907459912996636C22e671Acc38a04bC1Cbc 中的token1Balance= 187489942150829130930
+2021/07/01 12:33:09.430 [I] [chainUtils.go:75]  tokenAmount1： 41.924025574675706501536560106558790493987408189103699790312748336149678585622
+2021/07/01 12:33:09.662 [I] [chainUtils.go:75]  tokenPriceBig： 148882448786676451
+2021/07/01 12:33:09.662 [I] [chainUtils.go:75]  tokenAmount： 6.24175159055297
+2021/07/01 12:33:09.662 [I] [chainStatus.go:164]  lpToken= 0x0b04907459912996636C22e671Acc38a04bC1Cbc 中的token1Amount= 6.24175159055297
+2021/07/01 12:33:09.662 [I] [chainStatus.go:84]  lpId= 3 ，的价格(USDT):  12.48350318
+2021/07/01 12:33:09.662 [I] [chainStatus.go:84]  lpId= 3 的更新信息：totalLiquidityNew= 0 ，lpPriceNew= 12.48350318 ，totalAmountNew= 0 ，apyNew= 0

@@ -8,11 +8,11 @@ import (
 // 初始化定时任务
 func Init() {
 	// 链上链下容错，如果有效广告没有对应链上的抵押资产，则将此广告改为无效
-	checkOnChainStatus := toolbox.NewTask("checkOnChainStatus", "10 * 0/2 * * *", CheckOnChainStatus)
+	checkOnChainStatus := toolbox.NewTask("checkOnChainStatus", "0 0 0/1 * * *", CheckOnChainStatusPanic)
 	toolbox.AddTask("checkOnChainStatus", checkOnChainStatus)
 
 	// 从合约中获取流动池信息
-	listenLiquidityInfo := toolbox.NewTask("listenLiquidityInfo", "0/60 * * * * *", ListenLiquidityInfo)
+	listenLiquidityInfo := toolbox.NewTask("listenLiquidityInfo", "0/30 * * * * *", ListenLiquidityInfo)
 	toolbox.AddTask("listenLiquidityInfo", listenLiquidityInfo)
 
 	toolbox.StartTask()

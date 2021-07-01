@@ -7,10 +7,10 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 contract Jam is ERC20Burnable, Ownable {
     using SafeMath for uint256;
-
-    uint256 public maxSupply = 290000000 * 1e18;     // the total supply
-    uint256 public preMineSupply = 190000000 * 1e18;
-
+    
+    uint256 public maxSupply = 1000000000 * 1e18;     // the total supply
+    uint256 public preMineSupply = 900000000 * 1e18;
+    
     address public minter;
 
     constructor() ERC20("Jam Token", "JAM"){

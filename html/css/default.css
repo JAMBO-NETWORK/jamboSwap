@@ -58,14 +58,14 @@ a{
 	color: #fff;
 	text-decoration: none;
 }
-a:focus ,button:focus,input:focus,select:focus{
-    outline: none;
-		border:0
+a:focus,button:focus,input:focus,select:focus{
+    outline: none!important;
+		border:0!important;
+		text-decoration: none!important;
 }
 a:active,button:active,input:active,
 a:hover {
     outline: none;
-		text-underline: none;
 		text-decoration: none;
 }
  
@@ -200,7 +200,11 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
   -webkit-appearance: none !important; 
  }
 /* chrome */
- 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 input[type="number"]:focus{
   -moz-appearance:textfield;/* firefox */
 }
